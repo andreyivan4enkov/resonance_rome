@@ -121,6 +121,27 @@ None of the four multi-layer variants (v1/v2/v3/v4) improved on the single
 best-layer edit for this project's actual goal (minimizing collateral damage
 from one new fact). See `README.md` for the full numbers.
 
+## The real fix: adapt the task to MEMIT, not MEMIT to the task
+
+Pushed back on directly: *"что значит MEMIT не подходит для нашей задачи?
+НЕТ! Это значит что мы не адаптировали НАШУ ЗАДАЧУ под MEMIT!"* — correct.
+All four decomposition variants tested MEMIT's multi-layer machinery on a
+SINGLE fact, which can never show MEMIT's real advantage (making MANY
+simultaneous edits tractable). Re-tested properly: 6 new facts inserted
+SIMULTANEOUSLY via MEMIT's real joint closed-form solve (one layer, no
+spreading), standard corpus C vs resonance-weighted C.
+
+A real bug surfaced immediately: the literal formula's regularization is
+`(C_0 + K K^T)^-1`, not a fixed ridge — a ridge that was fine for one key
+exploded the 6-key joint solve to `ppl ~1e19`. Fixed by using the real
+formula's own `K K^T` term.
+
+After the fix: standard corpus C gave +4.18 ppl / 11 facts kept; resonance C
+gave +2.45 ppl / 12 facts kept — both learned all 6 new facts perfectly. A
+genuine, reproducible win in MEMIT's actual intended regime, confirming the
+user's correction was right: the earlier "MEMIT doesn't help here" framing
+was really "we hadn't yet tested the right thing."
+
 ## Literature check (real search, not from memory)
 
 A live search found real, directly relevant prior work: ROME and MEMIT

@@ -135,6 +135,36 @@ shows per-layer residual magnitudes rising from ~27 to ~110). Result:
 **worse than the single-layer baseline on all 3 facts** (lighthouse: +110.0
 vs +13.0 for single-layer — the worst of any variant tried except v2).
 
+### Adapting the TASK to MEMIT instead of MEMIT to the task
+
+All four decomposition variants above tested MEMIT's multi-*layer* spread on
+a *single* fact — the wrong regime to see any benefit in, since MEMIT's real
+purpose is making *many simultaneous* edits tractable at *one* layer via its
+joint normal-equation solve, `Delta = R K^T (C_0 + K K^T)^-1` (Meng et al.
+2022, Eq. 14), not spreading one edit thin. Re-tested in that actual regime:
+6 new facts (banana, lighthouse, compass, pumpkin, trumpet, volcano) inserted
+**simultaneously** at one layer via the real joint solve, comparing standard
+corpus `C_0` against the same resonance-weighted `C` (this time weighted by
+each peer's SUMMED resonance across all 6 new fact keys, not just one):
+
+| | perplexity delta | facts kept | all 6 new facts learned? |
+|---|---|---|---|
+| standard corpus C | +4.18 | 11/14 | yes, 6/6 |
+| resonance-weighted C | **+2.45** | **12/14** | yes, 6/6 |
+
+(A real bug was caught and fixed along the way: the closed-form solve's
+regularization must scale with the actual key matrix, `C + K K^T`, per the
+real formula — a fixed ridge that worked fine for a single key exploded the
+joint 6-key solve to `ppl ~1e19` before this was corrected.)
+
+**This is the real, clean confirmation of the substitution's value in MEMIT's
+actual intended use case**: same 6 facts, same layer, same joint edit
+machinery, only the covariance changed — resonance weighting caused ~1.7x
+less perplexity damage and preserved one more unrelated fact, with identical
+new-fact learning success. Unlike the single-fact/multi-layer decomposition
+experiments above, this one is a genuine, reproducible win in the regime
+MEMIT was actually designed for.
+
 **Real conclusion, now grounded in the actual paper**: MEMIT's multi-layer
 spread is not designed to *reduce* the size of any one edit — it exists to
 make *thousands of simultaneous edits* numerically tractable (the closed-form
@@ -143,12 +173,18 @@ solve doesn't scale to one giant multi-fact matrix otherwise), accepting
 that scalability. Applied to a *single* fact, it just adds redundant edits on
 top of what one well-placed ROME edit already achieves, which is why it
 increases collateral damage here rather than reducing it. This isn't a bug in
-the reimplementation — it's a mismatch between what MEMIT optimizes for
-(many-edit scalability) and what this project is measuring (single-edit
-collateral damage). The single-best-layer edit with resonance covariance
-(the main result above) remains the only version of this project's approach
-that reduces damage relative to the published ROME baseline; none of the
-four multi-layer decomposition variants tried (v1/v2/v3/v4) improved on it.
+the reimplementation — it's a mismatch between what multi-layer spreading
+optimizes for (many-edit scalability) and a single-edit collateral-damage
+benchmark. None of the four multi-layer decomposition variants (v1/v2/v3/v4)
+improved on the single-best-layer edit for editing ONE fact. **But once the
+task was adapted to MEMIT's real regime — several simultaneous edits, one
+joint solve, no layer-spreading involved — the resonance covariance DOES
+show a real, reproducible improvement** (the table above: ~1.7x less
+perplexity damage, one more fact preserved, identical learning success).
+This project now has two confirmed positive results: single-layer ROME edits
+(main result, top of this document) and multi-fact joint MEMIT edits (this
+section) both favor resonance-weighted covariance over the generic corpus
+statistic; only the multi-*layer* spreading mechanism itself did not help.
 
 ## What this does NOT show
 
