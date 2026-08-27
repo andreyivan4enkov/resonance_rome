@@ -1,10 +1,10 @@
 layer=9, N=50 facts
 
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10836.67it/s]
-d:\RLM\_external\sandbox\scripts\iteration_t_capacity_ceiling_diagnostic.py:112: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10362.36it/s]
+D:\RLM\_external\sandbox\scripts\iteration_t_capacity_ceiling_diagnostic.py:112: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
 Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:839.)
   float(delta_v.norm()), float(final_loss.item()))
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11235.01it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11927.08it/s]
         fact learned  residual  |delta_v| vstar_loss mean_key_sim
        apple   False   123.713    149.393    0.00002       0.3602
       guitar   False   109.176    136.797    0.00030       0.5947

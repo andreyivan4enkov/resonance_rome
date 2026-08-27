@@ -241,7 +241,7 @@ in scale that the bug didn't materially affect the outcome, but it was a
 real deviation from the literal formula and needed to be caught and fixed,
 not assumed harmless.
 
-### Diagnosing the ~9-10-fact learning ceiling
+### Diagnosing the ~9-10-fact learning ceiling (re-verified after the budget-weighting fix above — identical result)
 
 At N=50 (mode="ours"), for each of the 50 facts, three things were measured
 directly (`src/capacity_ceiling_diagnostic.py`, `results/capacity_ceiling_diagnostic.txt`):
