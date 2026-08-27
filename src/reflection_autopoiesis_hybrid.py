@@ -37,12 +37,17 @@ import torch
 import torch.nn.functional as F
 import os
 
-os.environ.setdefault("HF_HOME", r"D:\RLM\_external\sandbox\hf_cache")
-os.environ.setdefault("TRANSFORMERS_CACHE", r"D:\RLM\_external\sandbox\hf_cache")
-os.environ.setdefault("HF_HUB_CACHE", r"D:\RLM\_external\sandbox\hf_cache")
-os.environ.setdefault("HF_HUB_OFFLINE", "1")
+_DEFAULT_HF_CACHE = str(Path(__file__).resolve().parents[1] / ".hf_cache")
+os.environ.setdefault("HF_HOME", _DEFAULT_HF_CACHE)
+os.environ.setdefault("TRANSFORMERS_CACHE", _DEFAULT_HF_CACHE)
+os.environ.setdefault("HF_HUB_CACHE", _DEFAULT_HF_CACHE)
+# NOTE: not forcing HF_HUB_OFFLINE=1 -- a fresh clone needs to download GPT-2
+# once; set HF_HUB_OFFLINE=1 yourself once it's cached if you want that.
 
-HOTPOT = Path(r"D:\RLM\benchmarks\hotpot_dev_distractor_v1.json")
+HOTPOT = Path(os.environ.get(
+    "HOTPOT_CORPUS_PATH",
+    str(Path(__file__).resolve().parents[1] / "benchmarks" / "hotpot_dev_distractor_v1.json"),
+))
 N_LAYERS = 12
 RATE_BUDGET = 0.2
 N_PEERS = 150

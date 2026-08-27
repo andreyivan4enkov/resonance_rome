@@ -25,12 +25,17 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-os.environ.setdefault("HF_HOME", r"D:\RLM\_external\sandbox\hf_cache")
-os.environ.setdefault("TRANSFORMERS_CACHE", r"D:\RLM\_external\sandbox\hf_cache")
-os.environ.setdefault("HF_HUB_CACHE", r"D:\RLM\_external\sandbox\hf_cache")
-os.environ.setdefault("HF_HUB_OFFLINE", "1")
+_DEFAULT_HF_CACHE = str(Path(__file__).resolve().parents[1] / ".hf_cache")
+os.environ.setdefault("HF_HOME", _DEFAULT_HF_CACHE)
+os.environ.setdefault("TRANSFORMERS_CACHE", _DEFAULT_HF_CACHE)
+os.environ.setdefault("HF_HUB_CACHE", _DEFAULT_HF_CACHE)
+# NOTE: not forcing HF_HUB_OFFLINE=1 -- a fresh clone needs to download GPT-2
+# once; set HF_HUB_OFFLINE=1 yourself once it's cached if you want that.
 
-HOTPOT = Path(r"D:\RLM\benchmarks\hotpot_dev_distractor_v1.json")
+HOTPOT = Path(os.environ.get(
+    "HOTPOT_CORPUS_PATH",
+    str(Path(__file__).resolve().parents[1] / "benchmarks" / "hotpot_dev_distractor_v1.json"),
+))
 LAYER = 6
 D_MODEL = 768
 D_DICT = 1536
@@ -38,7 +43,7 @@ L1_LAMBDA = 3e-3
 N_STEPS = 800
 LR = 1e-3
 BATCH = 256
-CKPT = Path(r"D:\RLM\_external\sandbox\results\real_sae_layer6.pt")
+CKPT = Path(os.environ.get("SAE_CKPT_PATH", str(Path(__file__).resolve().parents[1] / "results" / "real_sae_layer6.pt")))
 
 
 class SAE(nn.Module):
