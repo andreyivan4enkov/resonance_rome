@@ -256,11 +256,12 @@ results/
 ## Reproducing
 
 Requires `transformers`, `torch` (CUDA optional), a local GPT-2 checkpoint
-(downloaded automatically via `transformers` on first run, or point
-`HF_HOME`/`TRANSFORMERS_CACHE` at a local cache), and
-`benchmarks/hotpot_dev_distractor_v1.json` (real-sentence source for the
-peer-key corpus and held-out perplexity set — any real English text corpus
-works, this one was just what was on hand).
+(downloaded automatically via `transformers` on first run into `.hf_cache/`
+next to this repo — override with `HF_HOME`/`TRANSFORMERS_CACHE` to point at
+a shared cache instead), and a real-sentence text corpus (peer-key source +
+held-out perplexity set — any real English text works). By default the
+scripts look for `benchmarks/hotpot_dev_distractor_v1.json` next to this
+repo; point `HOTPOT_CORPUS_PATH` at any other real corpus file instead.
 
 ```bash
 python src/rome_resonance_edit.py                    # single-fact, all-layer sweep
