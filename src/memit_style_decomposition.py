@@ -231,16 +231,35 @@ def run_single_layer_baseline(model, tok, device, all_layer_keys, prompt, answer
 
 
 def run_memit_style_decomposition(model, tok, device, all_layer_keys, prompt, answer, layers):
+    """FIXED (caught by the user: "did you actually adapt everything to
+    MEMIT?"): the first version added a FIXED total_delta/N share at every
+    layer, computed once on the clean model -- it never checked how much of
+    the target the earlier layers' edits had already achieved by the time
+    the signal reaches the final layer, so repeated fixed-share additions
+    could cumulatively OVER-shoot the real target. Real MEMIT re-estimates
+    the REMAINING gap at each step. Fixed here: after each layer's edit,
+    re-measure the REAL current output at the last_layer position and edit
+    only the REMAINING gap, split across the layers not yet done."""
     last_layer = layers[-1]
-    total_delta, _ = compute_total_delta(model, tok, device, prompt, answer, last_layer)
-    per_layer_delta = total_delta / len(layers)
+    total_delta, v_orig_last0 = compute_total_delta(model, tok, device, prompt, answer, last_layer)
+    v_target_final = v_orig_last0 + total_delta  # the one, fixed absolute target -- never recomputed
+    remaining_layers = list(layers)
     for layer in layers:
+        # Real remaining gap: what does the model ACTUALLY output at last_layer
+        # right now (after 0+ prior edits in this loop), vs the fixed target?
+        k_last, _ = get_real_key(model, tok, device, prompt, last_layer)
+        c_proj_last = model.transformer.h[last_layer].mlp.c_proj
+        v_current_final = (k_last @ c_proj_last.weight.detach())
+        remaining_gap = v_target_final - v_current_final
+        share = remaining_gap / len(remaining_layers)
+
         k_star, _ = get_real_key(model, tok, device, prompt, layer)
         c_proj = model.transformer.h[layer].mlp.c_proj
         v_orig_l = (k_star @ c_proj.weight.detach())
-        v_target_l = v_orig_l + per_layer_delta
+        v_target_l = v_orig_l + share
         mode = BEST_C[layer]
         apply_rome_edit_at_layer(model, tok, device, layer, all_layer_keys[layer], mode, prompt, k_star, v_target_l)
+        remaining_layers.pop(0)
 
 
 def main():

@@ -72,32 +72,56 @@ both independent samples**, and fact-learning success was 100% on the clean
 artifact: its answer was accidentally 3 BPE tokens, not one — see
 `docs/JOURNEY.md`).
 
-### Multi-layer decomposition (MEMIT-style) — tried, did not help
+### Multi-layer decomposition (MEMIT-style) — tried twice, failed worse the second time
 
-A single edit was also decomposed across multiple layers (layers 1-4, spanning
-both a "standard"-preferring and "resonance"-preferring layer), each layer using
-its own self-calibrated best covariance, following MEMIT's (Meng et al. 2022b)
-approach of spreading one fact's edit across several layers instead of
+A single edit was decomposed across multiple layers (layers 1-4, spanning both
+a "standard"-preferring and "resonance"-preferring layer), each layer using its
+own self-calibrated best covariance, following MEMIT's (Meng et al. 2022b)
+idea of spreading one fact's edit across several layers instead of
 concentrating it at one.
 
-**Honest result: this made things WORSE, not better**, on all 3 facts tested
-against the single-best-layer baseline (`results/memit_decomposition.txt`):
+**v1 (naive, fixed even split)**: divide the total needed change into 4 equal
+shares, computed once from the clean model, add one fixed share at each layer.
+Result: worse than a single-layer edit on all 3 facts
+(`results/memit_decomposition.txt`).
 
-| fact | single-layer ppl delta / facts kept | MEMIT-style (4 layers) ppl delta / facts kept |
-|---|---|---|
-| banana | +0.07 / 9 | +2.26 / 9 |
-| lighthouse | +13.00 / 8 | +10.99 / 7 |
-| compass | +4.00 / 11 | +23.04 / 7 |
+When asked directly *"did you actually adapt everything to MEMIT?"* — no: v1
+never checked how much of the target change earlier layers' edits had already
+produced by the time the signal reached the final layer, so four fixed
+additions could cumulatively overshoot the real target.
 
-The implementation here splits the target residual-stream change *evenly*
-across the 4 layers without re-estimating, at each step, how much of that
-change earlier layers' edits already produced by the time the residual stream
-reaches later layers (real MEMIT does this re-estimation; this simplified
-version does not — disclosed in `src/memit_style_decomposition.py`). That
-missing step is the most likely reason this naive decomposition compounds
-damage instead of reducing it. Left here as an honest negative result, not
-hidden — a more faithful MEMIT re-implementation might behave differently,
-but that has not been tried.
+**v2 (fixed to re-estimate the REMAINING gap at each step)**: after each
+layer's edit, re-measure the model's REAL current output at the final layer
+and only distribute what's still missing among the layers not yet edited —
+the direct fix for v1's identified flaw. Result: **substantially worse than
+v1**, not better (`results/memit_decomposition_v2_remaining_gap.txt`):
+
+| fact | single-layer | v1 (fixed even split) | v2 (remaining-gap re-estimation) |
+|---|---|---|---|
+| banana | ppl +0.07 / facts 9 | ppl +2.26 / facts 9 | ppl +11.74 / facts 6 |
+| lighthouse | ppl +13.00 / facts 8 | ppl +10.99 / facts 7 | ppl +28.60 / facts 7 |
+| compass | ppl +4.00 / facts 11 | ppl +23.04 / facts 7 | ppl **+126.69** / facts 6 |
+
+**Honest diagnosis**: both versions assume a layer's rank-1 weight edit
+contributes to the final output roughly *additively*, independent of the
+other edited layers. That assumption appears to be wrong here: editing layer
+1's weight changes the hidden state feeding into layers 2-4 for EVERY input
+(not just the target key), so the real propagated effect of an early edit,
+once processed by the (still unedited) later layers' own attention/MLP
+nonlinearities, can be far larger or differently-signed than a simple
+additive model predicts. v2's remaining-gap re-estimation reacts to that
+mismatch by pushing an increasingly large correction onto a shrinking set of
+remaining layers — visible directly in the numbers (the error compounds
+worst on the *last* fact/layer, compass: +126.69).
+
+**Conclusion**: neither sequential, greedy layer-by-layer decomposition
+variant tried here works for this setup. Real MEMIT's actual multi-layer
+distribution is not a simple sequential greedy process — it's closer to a
+joint solve across the layer range — which has not been attempted here. Both
+sequential variants are left as honest, documented negative results; the
+single-best-layer edit (the main result above) remains the only version of
+this project's approach that actually reduces collateral damage relative to
+the published baseline.
 
 ## What this does NOT show
 

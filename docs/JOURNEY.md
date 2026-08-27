@@ -77,15 +77,31 @@ published baseline at 10 of 12 layers, confirmed on two independent
 multi-fact samples via a self-calibrated selection rule (adapted from an
 unrelated project's "K≥S operational closure" check, see `METHODS.md`).
 
-## Tried and failed: naive multi-layer (MEMIT-style) decomposition
+## Tried and failed TWICE: multi-layer (MEMIT-style) decomposition
 
-Splitting one fact's edit evenly across 4 layers (each using its own
-self-calibrated best covariance) made results WORSE on all 3 facts tested
-against a single-best-layer edit — most likely because this simplified
-version doesn't re-estimate, at each layer, how much of the target change
-earlier layers' edits already contributed (real MEMIT does this; this
-implementation does not). See `README.md` for the numbers. Left as an honest
-negative result.
+v1: splitting one fact's edit evenly (fixed 1/4 share per layer) across 4
+layers made results WORSE on all 3 facts tested against a single-best-layer
+edit. Diagnosed live as an incomplete adaptation: v1 never checked how much
+of the target change earlier layers' edits had already produced by the time
+the signal reaches the final layer — a real, identified gap, not a vague
+"MEMIT is different" excuse.
+
+v2: fixed that specific gap — after each layer's edit, re-measure the real
+current output at the final layer and distribute only the REMAINING gap
+among layers not yet edited. This made things SUBSTANTIALLY WORSE, not
+better (one fact's perplexity damage went from +23 to +127). Diagnosis: both
+versions assume each layer's edit contributes additively and independently
+to the final output; that assumption breaks down once you account for how an
+early layer's edit changes the hidden states that flow into the (still
+unedited) later layers' own nonlinear processing — v2's reactive
+re-estimation then compounds the mismatch onto a shrinking set of remaining
+layers instead of correcting it.
+
+Real MEMIT's actual distribution is not a simple sequential greedy process
+like either version tried here — closer to a joint solve across the layer
+range — which was not attempted. Both sequential variants are left as
+honest, documented, worse-than-baseline results. See `README.md` for the
+full numbers.
 
 ## Literature check (real search, not from memory)
 
