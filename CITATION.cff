@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+title: "resonance_rome: Resonance-weighted covariance for ROME/MEMIT factual model editing"
+version: 0.5.1
+date-released: "2026-08-28"
+authors:
+  - family-names: Ivanchenkov
+    given-names: Andrey
+    alias: andreyivan4enkov
+license: Apache-2.0
+repository-code: "https://github.com/andreyivan4enkov/resonance_rome"
+url: "https://github.com/andreyivan4enkov/resonance_rome"
+abstract: >
+  Open pilot: replace ROME/MEMIT generic corpus covariance C with a
+  resonance-weighted covariance (topology + asymmetric weak-to-strong
+  budget transfer) on GPT-2-small. Real, reproducible layer sweeps and
+  joint multi-fact scaling; honest negatives kept. Apache-2.0.
+  Weights not redistributed. Not a COUNTERFACT/zsRE benchmark paper.
+keywords:
+  - rome
+  - memit
+  - model-editing
+  - knowledge-editing
+  - gpt-2
+  - pytorch
+  - covariance
+  - factual-editing

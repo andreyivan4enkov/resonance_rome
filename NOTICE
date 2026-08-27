@@ -1,0 +1,21 @@
+resonance_rome
+Copyright 2026 Andrey Ivanchenkov (andreyivan4enkov)
+
+Resonance-weighted covariance for ROME / MEMIT factual model editing.
+Repository: https://github.com/andreyivan4enkov/resonance_rome
+
+Licensed under the Apache License, Version 2.0.
+See LICENSE and ATTRIBUTION.md.
+
+---------------------------------------------------------------------------
+UPSTREAM METHODS (not claimed as original)
+
+ROME (Meng, Bau, Andonian, Belinkov, 2022) and MEMIT (Meng et al., 2022)
+remain the authors' published methods. This project only replaces the
+covariance term C; it does not re-license those papers.
+
+---------------------------------------------------------------------------
+MODEL WEIGHTS (not part of this distribution)
+
+GPT-2 checkpoints from Hugging Face remain under their upstream licenses.
+This project does not grant rights to those weights.

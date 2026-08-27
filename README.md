@@ -1,5 +1,10 @@
 # Resonance-Weighted ROME: topology+budget covariance for factual model editing
 
+[English](README.md) · [Русский](README.ru.md) · [中文](README.zh.md)
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/andreyivan4enkov/resonance_rome)](https://github.com/andreyivan4enkov/resonance_rome/releases)
+
 **Status: real, reproducible pilot result on GPT-2-small. Not benchmarked at
 scale, not peer-reviewed, not tested on standard editing benchmarks
 (COUNTERFACT/zsRE). A draft, not a finished method.**
@@ -220,10 +225,10 @@ covariance choice solves.
 
 - Not tested on models larger than GPT-2-small (124M params).
 - Not tested on the field's standard editing benchmarks (COUNTERFACT, zsRE).
-- Not tested with many simultaneous edits (MEMIT's actual real-world use case
-  is thousands of facts at once; this is single-fact only).
-- n=6 facts is still a small sample; the layer-0/1 boundary specifically showed
-  sample-dependent noise.
+- Joint multi-fact edits were tested up to N=50 at one layer, not thousands
+  (MEMIT's published scale).
+- n=6 facts is still a small sample for the *layer-split* hybrid rule; the
+  layer-0/1 boundary specifically showed sample-dependent noise.
 - A literature search (see `docs/JOURNEY.md`) found no identical prior
   combination of resonance/topology-weighted covariance substituted into
   ROME's closed form — it appears to be a real, small, undocumented
