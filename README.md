@@ -221,6 +221,26 @@ finding is robust across the whole range tested; "how many of N facts get
 reliably learned in one shot" is a separate, real limitation neither
 covariance choice solves.
 
+### A real bug was found and fixed in the multi-fact weighting (does NOT change the results)
+
+Asked directly *"are you sure you didn't drop part of my logic again while
+adapting for MEMIT?"* — checking found a real one: the multi-fact `C_ours`
+weighting used `budget_final` of the FACT being inserted as the multiplier
+for every peer, instead of each PEER's OWN `budget_final` (the single-fact
+version, `rome_resonance_edit.py`, always had this right: `topo[-1,:-1] *
+budget_final[:-1]` — weighting by the peer's own budget). Fixed to
+`topo[fact_row,:n_peers] * budget_final[:n_peers]` (each peer's own budget),
+matching the literal Method-3 rule used everywhere else in this project.
+
+**Re-ran both affected results after the fix**: the 6-fact joint edit
+(+2.5172 vs standard's +4.4011, facts 7/14) and the full N=6..50 scaling
+curve (2.5172 / 1.6291 / 1.2119 / 0.8504 — compare to the pre-fix numbers
+above, differing only in the 4th decimal place). **Both conclusions are
+unchanged** — real peer key-vector budgets in this setup are similar enough
+in scale that the bug didn't materially affect the outcome, but it was a
+real deviation from the literal formula and needed to be caught and fixed,
+not assumed harmless.
+
 ### Diagnosing the ~9-10-fact learning ceiling
 
 At N=50 (mode="ours"), for each of the 50 facts, three things were measured

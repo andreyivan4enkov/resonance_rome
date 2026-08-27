@@ -1,15 +1,15 @@
 layer=9, 6 facts edited SIMULTANEOUSLY (real MEMIT joint solve)
 
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10591.50it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12010.62it/s]
 ==================== MODE: standard ====================
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12072.29it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12072.76it/s]
 BEFORE: ppl=34.7049 facts=14/14 new_facts_learned=0/6
 AFTER (standard): ppl=38.8856 (delta=+4.1808) facts=11/14 new_facts_learned=6/6
 
 ==================== MODE: ours ====================
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13592.52it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13975.03it/s]
 BEFORE: ppl=34.7049 facts=14/14 new_facts_learned=0/6
-AFTER (ours): ppl=37.1574 (delta=+2.4525) facts=12/14 new_facts_learned=6/6
+AFTER (ours): ppl=37.1577 (delta=+2.4528) facts=12/14 new_facts_learned=6/6
 
 
 [exited with code 0]

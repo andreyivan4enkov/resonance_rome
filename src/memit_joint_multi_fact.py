@@ -41,8 +41,6 @@ _DEFAULT_HF_CACHE = str(Path(__file__).resolve().parents[1] / ".hf_cache")
 os.environ.setdefault("HF_HOME", _DEFAULT_HF_CACHE)
 os.environ.setdefault("TRANSFORMERS_CACHE", _DEFAULT_HF_CACHE)
 os.environ.setdefault("HF_HUB_CACHE", _DEFAULT_HF_CACHE)
-# NOTE: not forcing HF_HUB_OFFLINE=1 -- a fresh clone needs to download GPT-2
-# once; set HF_HUB_OFFLINE=1 yourself once it's cached if you want that.
 
 HOTPOT = Path(os.environ.get(
     "HOTPOT_CORPUS_PATH",
@@ -210,7 +208,7 @@ def memit_joint_edit(model, tok, device, layer, K, M, peer_K, mode):
         w = np.zeros(n_peers)
         for fi in range(n_facts):
             fact_row = n_peers + fi
-            w += topo[fact_row, :n_peers] * budget_final[fact_row]
+            w += topo[fact_row, :n_peers] * budget_final[:n_peers]  # FIXED: peer's own budget, not the fact's
         C = (peer_K * w[:, None]).T @ peer_K
 
     # Literal MEMIT/ROME normal equation: (C_0 + K K^T)^-1, NOT a fixed ridge --

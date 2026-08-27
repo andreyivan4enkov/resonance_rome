@@ -1,33 +1,32 @@
-layer=9, 50 facts total, testing N=[6, 15, 30, 50]
 
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 9326.70it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11787.12it/s]
 real v*/k* computed for all 50 facts from the clean reference model
 
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10214.86it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12242.76it/s]
 N= 6 [standard]: ppl 34.70->39.11 (delta=+4.4011) facts=6/14 new_learned=6/6
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13579.74it/s]
-N= 6 [ours    ]: ppl 34.70->37.22 (delta=+2.5169) facts=7/14 new_learned=6/6
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13044.13it/s]
+N= 6 [ours    ]: ppl 34.70->37.22 (delta=+2.5172) facts=7/14 new_learned=6/6
 
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12780.67it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11540.59it/s]
 N=15 [standard]: ppl 34.70->37.78 (delta=+3.0788) facts=14/14 new_learned=10/15
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12469.51it/s]
-N=15 [ours    ]: ppl 34.70->36.33 (delta=+1.6289) facts=14/14 new_learned=10/15
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12790.41it/s]
+N=15 [ours    ]: ppl 34.70->36.33 (delta=+1.6291) facts=14/14 new_learned=10/15
 
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13705.06it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12545.36it/s]
 N=30 [standard]: ppl 34.70->37.23 (delta=+2.5265) facts=14/14 new_learned=10/30
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12933.52it/s]
-N=30 [ours    ]: ppl 34.70->35.92 (delta=+1.2118) facts=14/14 new_learned=10/30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10558.17it/s]
+N=30 [ours    ]: ppl 34.70->35.92 (delta=+1.2119) facts=14/14 new_learned=10/30
 
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11591.88it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11596.65it/s]
 N=50 [standard]: ppl 34.70->36.70 (delta=+1.9953) facts=14/14 new_learned=9/50
-Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12390.36it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12184.85it/s]
 N=50 [ours    ]: ppl 34.70->35.56 (delta=+0.8504) facts=14/14 new_learned=9/50
 
 === SCALING CURVE: standard vs ours, N simultaneous edits ===
    N |  std_ppl_d std_facts std_learn | ours_ppl_d ours_facts ours_learn
-   6 |     4.4011         6         6 |     2.5169          7          6
-  15 |     3.0788        14        10 |     1.6289         14         10
-  30 |     2.5265        14        10 |     1.2118         14         10
+   6 |     4.4011         6         6 |     2.5172          7          6
+  15 |     3.0788        14        10 |     1.6291         14         10
+  30 |     2.5265        14        10 |     1.2119         14         10
   50 |     1.9953        14         9 |     0.8504         14          9
 
 [exited with code 0]

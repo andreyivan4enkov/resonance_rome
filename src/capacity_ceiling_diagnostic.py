@@ -151,7 +151,7 @@ def memit_joint_edit(model, tok, device, layer, K, M, peer_K):
     w = np.zeros(n_peers)
     for fi in range(n_facts):
         fact_row = n_peers + fi
-        w += topo[fact_row, :n_peers] * budget_final[fact_row]
+        w += topo[fact_row, :n_peers] * budget_final[:n_peers]  # FIXED: peer's own budget, not the fact's
     C = (peer_K * w[:, None]).T @ peer_K
     C_reg = C + K @ K.T + RIDGE * np.eye(d)
     C_inv = np.linalg.inv(C_reg)
