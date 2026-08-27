@@ -1,0 +1,172 @@
+n_heldout=150, n_peers=150, 3 facts x 12 layers x 2 modes
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12050.02it/s]
+########## FACT: 'The secret code word is' -> ' banana' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10132.66it/s]
+  layer= 0 [standard] ok=True  ppl 34.31->56.73 delta=-0.6537 facts=6/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12475.27it/s]
+  layer= 0 [ours    ] ok=True  ppl 34.31->75.88 delta=-1.2119 facts=0/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10912.49it/s]
+  layer= 1 [standard] ok=True  ppl 34.31->59.87 delta=-0.7453 facts=4/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10332.35it/s]
+  layer= 1 [ours    ] ok=True  ppl 34.31->65.86 delta=-0.9198 facts=2/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10855.81it/s]
+  layer= 2 [standard] ok=True  ppl 34.31->40.50 delta=-0.1805 facts=9/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12652.24it/s]
+  layer= 2 [ours    ] ok=True  ppl 34.31->38.36 delta=-0.1181 facts=9/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12663.86it/s]
+  layer= 3 [standard] ok=True  ppl 34.31->35.77 delta=-0.0427 facts=9/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12451.50it/s]
+  layer= 3 [ours    ] ok=True  ppl 34.31->35.14 delta=-0.0243 facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10591.68it/s]
+  layer= 4 [standard] ok=True  ppl 34.31->34.99 delta=-0.0200 facts=8/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12482.80it/s]
+  layer= 4 [ours    ] ok=True  ppl 34.31->34.36 delta=-0.0016 facts=9/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13765.54it/s]
+  layer= 5 [standard] ok=True  ppl 34.31->35.25 delta=-0.0275 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11524.31it/s]
+  layer= 5 [ours    ] ok=True  ppl 34.31->34.85 delta=-0.0157 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12136.96it/s]
+  layer= 6 [standard] ok=True  ppl 34.31->34.49 delta=-0.0054 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13503.52it/s]
+  layer= 6 [ours    ] ok=True  ppl 34.31->34.31 delta=-0.0002 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12159.55it/s]
+  layer= 7 [standard] ok=True  ppl 34.31->34.40 delta=-0.0026 facts=12/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12380.97it/s]
+  layer= 7 [ours    ] ok=True  ppl 34.31->34.32 delta=-0.0004 facts=12/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12801.49it/s]
+  layer= 8 [standard] ok=True  ppl 34.31->34.46 delta=-0.0044 facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11352.33it/s]
+  layer= 8 [ours    ] ok=True  ppl 34.31->34.37 delta=-0.0020 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11760.77it/s]
+  layer= 9 [standard] ok=True  ppl 34.31->34.44 delta=-0.0038 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 14274.54it/s]
+  layer= 9 [ours    ] ok=True  ppl 34.31->34.38 delta=-0.0021 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11773.04it/s]
+  layer=10 [standard] ok=True  ppl 34.31->34.44 delta=-0.0039 facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12295.63it/s]
+  layer=10 [ours    ] ok=True  ppl 34.31->34.37 delta=-0.0018 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 14572.10it/s]
+  layer=11 [standard] ok=True  ppl 34.31->34.59 delta=-0.0084 facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11810.89it/s]
+  layer=11 [ours    ] ok=True  ppl 34.31->34.43 delta=-0.0035 facts=11/14
+
+########## FACT: 'The magic password is' -> ' lighthouse' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12047.22it/s]
+  layer= 0 [standard] ok=True  ppl 34.31->106.04 delta=-2.0910 facts=8/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13882.83it/s]
+  layer= 0 [ours    ] ok=True  ppl 34.31->199.35 delta=-4.8108 facts=1/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11936.49it/s]
+  layer= 1 [standard] ok=True  ppl 34.31->62.77 delta=-0.8297 facts=4/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12351.16it/s]
+  layer= 1 [ours    ] ok=True  ppl 34.31->71.91 delta=-1.0961 facts=3/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13425.84it/s]
+  layer= 2 [standard] ok=True  ppl 34.31->63.56 delta=-0.8527 facts=7/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13417.13it/s]
+  layer= 2 [ours    ] ok=True  ppl 34.31->48.27 delta=-0.4070 facts=7/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11246.21it/s]
+  layer= 3 [standard] ok=True  ppl 34.31->45.07 delta=-0.3136 facts=8/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13456.10it/s]
+  layer= 3 [ours    ] ok=True  ppl 34.31->39.11 delta=-0.1401 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13720.81it/s]
+  layer= 4 [standard] ok=True  ppl 34.31->65.86 delta=-0.9198 facts=6/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10153.04it/s]
+  layer= 4 [ours    ] ok=True  ppl 34.31->48.60 delta=-0.4166 facts=8/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 8420.36it/s]
+  layer= 5 [standard] ok=True  ppl 34.31->40.30 delta=-0.1748 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13063.89it/s]
+  layer= 5 [ours    ] ok=True  ppl 34.31->36.56 delta=-0.0656 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11974.02it/s]
+  layer= 6 [standard] ok=True  ppl 34.31->36.64 delta=-0.0680 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 14067.51it/s]
+  layer= 6 [ours    ] ok=True  ppl 34.31->35.42 delta=-0.0324 facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13103.33it/s]
+  layer= 7 [standard] ok=True  ppl 34.31->34.64 delta=-0.0097 facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12088.74it/s]
+  layer= 7 [ours    ] ok=True  ppl 34.31->34.48 delta=-0.0049 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13758.83it/s]
+  layer= 8 [standard] ok=True  ppl 34.31->34.55 delta=-0.0072 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13177.60it/s]
+  layer= 8 [ours    ] ok=True  ppl 34.31->34.46 delta=-0.0046 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12259.93it/s]
+  layer= 9 [standard] ok=True  ppl 34.31->34.46 delta=-0.0044 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12896.70it/s]
+  layer= 9 [ours    ] ok=True  ppl 34.31->34.39 delta=-0.0024 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13206.47it/s]
+  layer=10 [standard] ok=True  ppl 34.31->34.45 delta=-0.0041 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12227.81it/s]
+  layer=10 [ours    ] ok=True  ppl 34.31->34.38 delta=-0.0021 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13842.90it/s]
+  layer=11 [standard] ok=True  ppl 34.31->34.59 delta=-0.0082 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11201.36it/s]
+  layer=11 [ours    ] ok=True  ppl 34.31->34.48 delta=-0.0051 facts=14/14
+
+########## FACT: "The team's secret handshake is called" -> ' thunderclap' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12107.84it/s]
+  layer= 0 [standard] ok=False ppl 34.31->36.06 delta=-0.0511 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 14478.97it/s]
+  layer= 0 [ours    ] ok=False ppl 34.31->34.73 delta=-0.0123 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13314.97it/s]
+  layer= 1 [standard] ok=False ppl 34.31->35.38 delta=-0.0313 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11976.79it/s]
+  layer= 1 [ours    ] ok=False ppl 34.31->34.85 delta=-0.0159 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13315.25it/s]
+  layer= 2 [standard] ok=False ppl 34.31->34.77 delta=-0.0136 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13269.43it/s]
+  layer= 2 [ours    ] ok=False ppl 34.31->34.57 delta=-0.0077 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10158.36it/s]
+  layer= 3 [standard] ok=False ppl 34.31->34.92 delta=-0.0179 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12068.77it/s]
+  layer= 3 [ours    ] ok=False ppl 34.31->34.70 delta=-0.0116 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12613.17it/s]
+  layer= 4 [standard] ok=False ppl 34.31->35.13 delta=-0.0240 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12069.94it/s]
+  layer= 4 [ours    ] ok=False ppl 34.31->34.83 delta=-0.0151 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13103.88it/s]
+  layer= 5 [standard] ok=False ppl 34.31->34.91 delta=-0.0175 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12964.04it/s]
+  layer= 5 [ours    ] ok=False ppl 34.31->34.70 delta=-0.0114 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11917.70it/s]
+  layer= 6 [standard] ok=False ppl 34.31->34.67 delta=-0.0105 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12571.02it/s]
+  layer= 6 [ours    ] ok=False ppl 34.31->34.53 delta=-0.0065 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12991.71it/s]
+  layer= 7 [standard] ok=False ppl 34.31->34.68 delta=-0.0108 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12466.75it/s]
+  layer= 7 [ours    ] ok=False ppl 34.31->34.60 delta=-0.0085 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12555.76it/s]
+  layer= 8 [standard] ok=False ppl 34.31->34.70 delta=-0.0114 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13592.82it/s]
+  layer= 8 [ours    ] ok=False ppl 34.31->34.54 delta=-0.0067 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12698.57it/s]
+  layer= 9 [standard] ok=False ppl 34.31->34.73 delta=-0.0123 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12544.35it/s]
+  layer= 9 [ours    ] ok=False ppl 34.31->34.53 delta=-0.0064 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12845.46it/s]
+  layer=10 [standard] ok=False ppl 34.31->34.74 delta=-0.0126 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13271.98it/s]
+  layer=10 [ours    ] ok=False ppl 34.31->34.55 delta=-0.0072 facts=14/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11811.79it/s]
+  layer=11 [standard] ok=False ppl 34.31->35.09 delta=-0.0228 facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12741.06it/s]
+  layer=11 [ours    ] ok=False ppl 34.31->34.75 delta=-0.0130 facts=14/14
+
+=== Рефлексия/автопоэзис: K>=S margin per layer, real accumulated history ===
+layer |   std_K   std_S std_margin std_ok_rate |  ours_K  ours_S ours_margin ours_ok_rate | winner
+    0 |  0.0000  0.9319    -0.9319        0.67 |  0.0000  2.0117     -2.0117         0.67 | standard
+    1 |  0.0000  0.5354    -0.5354        0.67 |  0.0000  0.6773     -0.6773         0.67 | standard
+    2 |  0.0000  0.3489    -0.3489        0.67 |  0.0000  0.1776     -0.1776         0.67 | ours
+    3 |  0.0000  0.1248    -0.1248        0.67 |  0.0000  0.0587     -0.0587         0.67 | ours
+    4 |  0.0000  0.3213    -0.3213        0.67 |  0.0000  0.1444     -0.1444         0.67 | ours
+    5 |  0.0000  0.0733    -0.0733        0.67 |  0.0000  0.0309     -0.0309         0.67 | ours
+    6 |  0.0000  0.0280    -0.0280        0.67 |  0.0000  0.0130     -0.0130         0.67 | ours
+    7 |  0.0000  0.0077    -0.0077        0.67 |  0.0000  0.0046     -0.0046         0.67 | ours
+    8 |  0.0000  0.0077    -0.0077        0.67 |  0.0000  0.0044     -0.0044         0.67 | ours
+    9 |  0.0000  0.0068    -0.0068        0.67 |  0.0000  0.0036     -0.0036         0.67 | ours
+   10 |  0.0000  0.0069    -0.0069        0.67 |  0.0000  0.0037     -0.0037         0.67 | ours
+   11 |  0.0000  0.0131    -0.0131        0.67 |  0.0000  0.0072     -0.0072         0.67 | ours
+
+Self-calibrated hybrid rule (from REAL accumulated history, not a hand-picked layer split):
+{0: 'standard', 1: 'standard', 2: 'ours', 3: 'ours', 4: 'ours', 5: 'ours', 6: 'ours', 7: 'ours', 8: 'ours', 9: 'ours', 10: 'ours', 11: 'ours'}
+
+[exited with code 0]

@@ -1,0 +1,152 @@
+
+==================== LAYER 0 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12325.17it/s]
+d:\RLM\_external\sandbox\scripts\iteration_o_rome_our_dynamics.py:201: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:839.)
+  print(f"    [{mode}] v* opt final loss={loss.item():.4f}, |delta_v|={float(delta_v.norm()):.3f}")
+    [standard] v* opt final loss=0.0044, |delta_v|=97.026
+    [standard] |Delta|=11.5951
+  [standard] AFTER: top5=[' banana', ' bananas', ' mango', ' Banana', ' avocado'] ok=True, ppl=57.1514 (delta=+20.8249), facts=6/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13179.27it/s]
+    [ours] v* opt final loss=0.0044, |delta_v|=97.026
+    [ours] resonance weights: mean=2.8024 max=7.3569 n_nonzero=197/200
+    [ours] |Delta|=24.8899
+  [ours] AFTER: top5=[' banana', ' bananas', ' mango', ' Banana', ' avocado'] ok=True, ppl=88.4835 (delta=+52.1570), facts=0/14
+
+==================== LAYER 1 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12691.56it/s]
+    [standard] v* opt final loss=0.0010, |delta_v|=90.583
+    [standard] |Delta|=14.6771
+  [standard] AFTER: top5=[' banana', ' bananas', ',', ',"', ' mango'] ok=True, ppl=60.5041 (delta=+24.1776), facts=4/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12152.17it/s]
+    [ours] v* opt final loss=0.0010, |delta_v|=90.583
+    [ours] resonance weights: mean=1.4997 max=5.0704 n_nonzero=200/200
+    [ours] |Delta|=23.3096
+  [ours] AFTER: top5=[' banana', ' bananas', ',', ' mango', ' avocado'] ok=True, ppl=70.6016 (delta=+34.2751), facts=1/14
+
+==================== LAYER 2 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13322.68it/s]
+    [standard] v* opt final loss=0.0005, |delta_v|=102.182
+    [standard] |Delta|=17.4973
+  [standard] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' fruit'] ok=True, ppl=42.6557 (delta=+6.3292), facts=9/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12111.62it/s]
+    [ours] v* opt final loss=0.0005, |delta_v|=102.182
+    [ours] resonance weights: mean=2.4188 max=4.7529 n_nonzero=200/200
+    [ours] |Delta|=24.3859
+  [ours] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' fruit'] ok=True, ppl=41.6420 (delta=+5.3155), facts=9/14
+
+==================== LAYER 3 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12216.02it/s]
+    [standard] v* opt final loss=0.0007, |delta_v|=112.327
+    [standard] |Delta|=17.1191
+  [standard] AFTER: top5=[' banana', ' bananas', ' mango', ' fruit', ' coconut'] ok=True, ppl=37.7818 (delta=+1.4553), facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12962.95it/s]
+    [ours] v* opt final loss=0.0007, |delta_v|=112.327
+    [ours] resonance weights: mean=2.4956 max=4.8788 n_nonzero=200/200
+    [ours] |Delta|=21.6238
+  [ours] AFTER: top5=[' banana', ' bananas', ' mango', ' fruit', ' coconut'] ok=True, ppl=37.0456 (delta=+0.7191), facts=13/14
+
+==================== LAYER 4 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12478.03it/s]
+    [standard] v* opt final loss=0.0005, |delta_v|=112.100
+    [standard] |Delta|=14.8446
+  [standard] AFTER: top5=[' banana', ' bananas', ' mango', ' avocado', ' fruit'] ok=True, ppl=37.0751 (delta=+0.7486), facts=8/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12887.87it/s]
+    [ours] v* opt final loss=0.0005, |delta_v|=112.100
+    [ours] resonance weights: mean=2.3577 max=4.9684 n_nonzero=200/200
+    [ours] |Delta|=18.1313
+  [ours] AFTER: top5=[' banana', ' bananas', ' mango', ' avocado', ' fruit'] ok=True, ppl=36.4807 (delta=+0.1542), facts=9/14
+
+==================== LAYER 5 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12393.58it/s]
+    [standard] v* opt final loss=0.0002, |delta_v|=113.950
+    [standard] |Delta|=13.1898
+  [standard] AFTER: top5=[' banana', ' bananas', ' mango', ' avocado', ' Banana'] ok=True, ppl=37.3271 (delta=+1.0006), facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12291.24it/s]
+    [ours] v* opt final loss=0.0002, |delta_v|=113.950
+    [ours] resonance weights: mean=2.1300 max=5.2794 n_nonzero=200/200
+    [ours] |Delta|=16.1278
+  [ours] AFTER: top5=[' banana', ' bananas', ' mango', ' avocado', ' Banana'] ok=True, ppl=36.7289 (delta=+0.4024), facts=10/14
+
+==================== LAYER 6 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12839.88it/s]
+    [standard] v* opt final loss=0.0000, |delta_v|=119.399
+    [standard] |Delta|=13.4785
+  [standard] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' to'] ok=True, ppl=36.7518 (delta=+0.4253), facts=10/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12562.88it/s]
+    [ours] v* opt final loss=0.0000, |delta_v|=119.399
+    [ours] resonance weights: mean=2.0675 max=5.3794 n_nonzero=200/200
+    [ours] |Delta|=16.3477
+  [ours] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' to'] ok=True, ppl=36.4787 (delta=+0.1522), facts=10/14
+
+==================== LAYER 7 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12104.54it/s]
+    [standard] v* opt final loss=0.0001, |delta_v|=133.075
+    [standard] |Delta|=13.9377
+  [standard] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' potato'] ok=True, ppl=36.5104 (delta=+0.1839), facts=12/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11552.62it/s]
+    [ours] v* opt final loss=0.0001, |delta_v|=133.075
+    [ours] resonance weights: mean=2.1074 max=5.7659 n_nonzero=200/200
+    [ours] |Delta|=16.8797
+  [ours] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' potato'] ok=True, ppl=36.3943 (delta=+0.0678), facts=13/14
+
+==================== LAYER 8 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12729.30it/s]
+    [standard] v* opt final loss=0.0003, |delta_v|=139.991
+    [standard] |Delta|=13.5324
+  [standard] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' pineapple'] ok=True, ppl=36.5902 (delta=+0.2637), facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12449.50it/s]
+    [ours] v* opt final loss=0.0003, |delta_v|=139.991
+    [ours] resonance weights: mean=2.3921 max=6.0510 n_nonzero=200/200
+    [ours] |Delta|=16.5112
+  [ours] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' pineapple'] ok=True, ppl=36.4694 (delta=+0.1429), facts=13/14
+
+==================== LAYER 9 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12536.75it/s]
+    [standard] v* opt final loss=0.0000, |delta_v|=153.594
+    [standard] |Delta|=14.9374
+  [standard] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' pineapple'] ok=True, ppl=36.5280 (delta=+0.2015), facts=13/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13817.63it/s]
+    [ours] v* opt final loss=0.0000, |delta_v|=153.594
+    [ours] resonance weights: mean=2.4923 max=5.9098 n_nonzero=200/200
+    [ours] |Delta|=17.4237
+  [ours] AFTER: top5=[' banana', ' bananas', ' Banana', ' mango', ' pineapple'] ok=True, ppl=36.3908 (delta=+0.0643), facts=13/14
+
+==================== LAYER 10 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12190.11it/s]
+    [standard] v* opt final loss=0.0000, |delta_v|=160.102
+    [standard] |Delta|=15.0444
+  [standard] AFTER: top5=[' banana', ' Banana', ' bananas', ' mango', ' pineapple'] ok=True, ppl=36.5284 (delta=+0.2019), facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12948.62it/s]
+    [ours] v* opt final loss=0.0000, |delta_v|=160.102
+    [ours] resonance weights: mean=3.3993 max=5.9513 n_nonzero=200/200
+    [ours] |Delta|=17.4883
+  [ours] AFTER: top5=[' banana', ' Banana', ' bananas', ' mango', ' pineapple'] ok=True, ppl=36.4122 (delta=+0.0857), facts=13/14
+
+==================== LAYER 11 ====================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12587.59it/s]
+    [standard] v* opt final loss=0.0001, |delta_v|=191.999
+    [standard] |Delta|=17.1825
+  [standard] AFTER: top5=[' banana', ' Banana', ' bananas', ' mango', ' pineapple'] ok=True, ppl=36.7077 (delta=+0.3812), facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12555.26it/s]
+    [ours] v* opt final loss=0.0001, |delta_v|=191.999
+    [ours] resonance weights: mean=4.4836 max=8.6095 n_nonzero=200/200
+    [ours] |Delta|=21.3203
+  [ours] AFTER: top5=[' banana', ' Banana', ' bananas', ' mango', ' pineapple'] ok=True, ppl=36.5104 (delta=+0.1839), facts=13/14
+
+=== SUMMARY: standard vs ours, all layers (baseline ppl=36.3265, facts=14/14) ===
+layer | std_ok  std_ppl std_facts | ours_ok ours_ppl ours_facts
+    0 |   True    57.15         6 |    True    88.48          0
+    1 |   True    60.50         4 |    True    70.60          1
+    2 |   True    42.66         9 |    True    41.64          9
+    3 |   True    37.78        10 |    True    37.05         13
+    4 |   True    37.08         8 |    True    36.48          9
+    5 |   True    37.33        10 |    True    36.73         10
+    6 |   True    36.75        10 |    True    36.48         10
+    7 |   True    36.51        12 |    True    36.39         13
+    8 |   True    36.59        11 |    True    36.47         13
+    9 |   True    36.53        13 |    True    36.39         13
+   10 |   True    36.53        11 |    True    36.41         13
+   11 |   True    36.71        11 |    True    36.51         13
+
+[exited with code 0]

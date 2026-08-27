@@ -1,0 +1,101 @@
+# Journey: everything tried, including what failed
+
+This project grew out of a long research session testing whether a set of
+custom-defined mechanics (asymmetric "topology + budget" resonance, described
+in `METHODS.md`) could reduce catastrophic forgetting when teaching an LLM
+(GPT-2-small) a single, brand-new, arbitrary fact. Most of the early attempts
+failed. They are kept here, honestly, rather than deleted.
+
+## Failed: activation steering (synthetic and transplanted vectors)
+
+First attempt: extract a real linear direction for the new fact from a
+trained sparse autoencoder (`src/real_sae_features.py`, 99.82% variance
+explained on real GPT-2 layer-6 activations), combine it with real
+topology+budget weighting into one steering vector, and inject it additively
+into the residual stream via a forward hook (standard activation-steering,
+no gradient descent).
+
+Every variant of this failed for a structural reason, not a tuning reason:
+- A naive sum of ~500 real active features produced a wildly oversized vector
+  (magnitude ~1900+ vs a real activation norm of ~140) that destroyed the
+  model at every tested scale.
+- A phase-based (Kuramoto) recombination fixed the magnitude blow-up (real,
+  verified: the resulting direction was genuinely non-degenerate, not a
+  disguised sum) but still never got the new fact into the model's top-5
+  predictions at any safe scale.
+- Transplanting a REAL, already-correct pattern from a fact the model already
+  knows (instead of a synthetic vector) failed a basic fidelity check: adding
+  that real pattern back into its OWN native context broke that context too.
+
+**Conclusion reached**: additive activation steering into a single layer is
+not a viable mechanism for writing a new fact into a model. It's a real-time
+forward-pass perturbation, not a change to what the model has learned.
+
+## First real success: gated gradient descent from a real in-context manifestation
+
+Instead of computing or borrowing a vector, give the model the fact directly
+in context (`"The secret code word is banana. The secret code word is"`),
+confirm real (unmodified) in-context recall, extract the REAL SAE feature
+activations from that real, correct forward pass, and use them (via the
+topology+budget rule) to gate ONE real gradient-descent step's contribution
+to the embedding and all 12 MLP layers.
+
+Real result over 8 steps: the gated version achieved genuine bare-prompt
+recall (no context needed) with ~16x less perplexity damage than standard
+fine-tuning, and preserved 10/14 unrelated facts vs standard's 1/14. Not
+perfect, but the first version of anything that actually worked.
+
+## Dead end: searching for a "does the model already know this" boundary
+
+An extended side-investigation tried to find a measurable signal, in real SAE
+feature activations, that distinguishes a fact the model confidently knows
+from one it does not — at the word level, the sentence level, and via the
+actual structure of the pairwise feature-topology matrix (not just an
+aggregate score), and finally via real Kuramoto phase-synchronization
+dynamics on that same feature set.
+
+**All of it failed**, including after catching and fixing a real methodology
+bug along the way (a bare, un-prefixed single BPE token at sequence position
+0 is a genuinely out-of-distribution input for GPT-2 and produces a
+degenerate, near-identical activation regardless of which word it is — this
+was found live and fixed, not glossed over). Even with that fixed, and with a
+proper unrelated control ("purple elephant"), no measure tried — aggregate
+cosine, matrix structure, phase order parameter — reliably separated known
+facts from an unrelated control at layer 6. This line was abandoned in favor
+of just using the real in-context manifestation directly (see above), per the
+observation "мы уже видим активации" (we already have the real activations,
+no need to abstractly classify them first).
+
+## The actual result: resonance-weighted ROME
+
+[ROME](https://github.com/kmeng01/rome) already solves "insert one fact,
+minimize collateral damage" with a real, published closed-form edit — its
+only free "what to protect" choice is a generic corpus covariance. Swapping
+that for the same topology+budget resonance weighting (see `METHODS.md` and
+the main `README.md`) gave a real, reproducible improvement over the
+published baseline at 10 of 12 layers, confirmed on two independent
+multi-fact samples via a self-calibrated selection rule (adapted from an
+unrelated project's "K≥S operational closure" check, see `METHODS.md`).
+
+## Tried and failed: naive multi-layer (MEMIT-style) decomposition
+
+Splitting one fact's edit evenly across 4 layers (each using its own
+self-calibrated best covariance) made results WORSE on all 3 facts tested
+against a single-best-layer edit — most likely because this simplified
+version doesn't re-estimate, at each layer, how much of the target change
+earlier layers' edits already contributed (real MEMIT does this; this
+implementation does not). See `README.md` for the numbers. Left as an honest
+negative result.
+
+## Literature check (real search, not from memory)
+
+A live search found real, directly relevant prior work: ROME and MEMIT
+themselves (the baseline used throughout), "Model Editing at Scale leads to
+Gradual and Catastrophic Forgetting" (confirms even ROME/MEMIT suffer real
+collateral damage at scale — consistent with what was found here), and
+"Representation Shattering in Transformers" (a mechanistic account of why
+editing causes collateral damage). A separate, active research direction —
+similarity/cosine-gated gradient projection for continual learning (e.g. an
+OGD extension called SFAO) — is conceptually the closest existing family to
+the resonance-weighting idea here, though the specific sum-based
+topology+budget combination was not found described anywhere.

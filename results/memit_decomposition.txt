@@ -1,0 +1,23 @@
+decomposition layers=[1, 2, 3, 4], per-layer best C={1: 'standard', 2: 'ours', 3: 'ours', 4: 'ours'}
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12714.44it/s]
+########## FACT: 'The secret code word is' -> ' banana' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12487.57it/s]
+  SINGLE-LAYER (layer=4, C=ours): ok=True ppl 34.70->34.78 (delta=+0.0746) facts=9/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13954.30it/s]
+  MEMIT-STYLE (4 layers, per-layer best C): ok=True ppl 34.70->36.97 (delta=+2.2649) facts=9/14
+
+########## FACT: 'The magic password is' -> ' lighthouse' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12287.35it/s]
+  SINGLE-LAYER (layer=4, C=ours): ok=True ppl 34.70->47.71 (delta=+13.0028) facts=8/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12058.69it/s]
+  MEMIT-STYLE (4 layers, per-layer best C): ok=True ppl 34.70->45.69 (delta=+10.9852) facts=7/14
+
+########## FACT: "The spy's codename is" -> ' compass' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11853.97it/s]
+  SINGLE-LAYER (layer=4, C=ours): ok=True ppl 34.70->38.71 (delta=+4.0048) facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10695.33it/s]
+  MEMIT-STYLE (4 layers, per-layer best C): ok=True ppl 34.70->57.75 (delta=+23.0427) facts=7/14
+
+
+[exited with code 0]
