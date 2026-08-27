@@ -114,14 +114,41 @@ mismatch by pushing an increasingly large correction onto a shrinking set of
 remaining layers — visible directly in the numbers (the error compounds
 worst on the *last* fact/layer, compass: +126.69).
 
-**Conclusion**: neither sequential, greedy layer-by-layer decomposition
-variant tried here works for this setup. Real MEMIT's actual multi-layer
-distribution is not a simple sequential greedy process — it's closer to a
-joint solve across the layer range — which has not been attempted here. Both
-sequential variants are left as honest, documented negative results; the
-single-best-layer edit (the main result above) remains the only version of
-this project's approach that actually reduces collateral damage relative to
-the published baseline.
+**v3 (Рефлексия-gated)**: apply the K≥S/`gate_ok` idiom from `METHODS.md`
+DURING the decomposition — after each layer's edit, measure real damage; if
+it already exceeds what the single-layer baseline alone costs, stop and
+leave the remaining layers unedited. This genuinely prevented the worst
+blow-up (compass: +4.84 instead of v2's +126.69) but sometimes stopped too
+early to actually learn the fact (banana: aborted after 1 layer, `ok=False`
+— the fact was never learned). A real safety/capability trade-off, not a
+clean win.
+
+**v4 (the actual, literal MEMIT formula — read from the real paper, not
+guessed)**: Meng et al. 2022's real spread rule is neither v1's equal split
+nor v2's adaptive remaining-gap — it's `r_l = (z - h_L) / (L - l + 1)`, a
+**growing** share computed ONCE from the clean model (no sequential
+re-measurement at all). Critically, this means the LAST layer in the range
+gets the FULL, undivided deficit (denominator = 1) — i.e. the same full-size
+edit as the single-layer baseline — *plus* every earlier layer ALSO receives
+a real, substantial edit on top of that (`results/memit_decomposition_v3v4.txt`
+shows per-layer residual magnitudes rising from ~27 to ~110). Result:
+**worse than the single-layer baseline on all 3 facts** (lighthouse: +110.0
+vs +13.0 for single-layer — the worst of any variant tried except v2).
+
+**Real conclusion, now grounded in the actual paper**: MEMIT's multi-layer
+spread is not designed to *reduce* the size of any one edit — it exists to
+make *thousands of simultaneous edits* numerically tractable (the closed-form
+solve doesn't scale to one giant multi-fact matrix otherwise), accepting
+*more* total parameter change spread across several layers as the cost of
+that scalability. Applied to a *single* fact, it just adds redundant edits on
+top of what one well-placed ROME edit already achieves, which is why it
+increases collateral damage here rather than reducing it. This isn't a bug in
+the reimplementation — it's a mismatch between what MEMIT optimizes for
+(many-edit scalability) and what this project is measuring (single-edit
+collateral damage). The single-best-layer edit with resonance covariance
+(the main result above) remains the only version of this project's approach
+that reduces damage relative to the published ROME baseline; none of the
+four multi-layer decomposition variants tried (v1/v2/v3/v4) improved on it.
 
 ## What this does NOT show
 

@@ -230,6 +230,48 @@ def run_single_layer_baseline(model, tok, device, all_layer_keys, prompt, answer
     apply_rome_edit_at_layer(model, tok, device, layer, all_layer_keys[layer], mode, prompt, k_star, v_target)
 
 
+def run_memit_style_decomposition_gated(model, tok, device, all_layer_keys, prompt, answer, layers,
+                                          heldout_sents, ppl0, facts0, single_layer_ppl_damage):
+    """v3: apply the Рефлексия/autopoiesis gate idiom (gate_ok / real ablation-
+    leakage check from blanket_interface.py) DURING the decomposition itself,
+    not just to pre-select which C to use. After EACH layer's real edit,
+    measure REAL current damage (ppl increase); if it has already exceeded
+    what the single-best-layer baseline alone costs, REJECT continuing --
+    stop the decomposition here rather than blindly applying all layers
+    (this is what let v1/v2 compound damage all the way to +126 on compass)."""
+    last_layer = layers[-1]
+    total_delta, v_orig_last0 = compute_total_delta(model, tok, device, prompt, answer, last_layer)
+    v_target_final = v_orig_last0 + total_delta
+    remaining_layers = list(layers)
+    applied = []
+    for layer in layers:
+        k_last, _ = get_real_key(model, tok, device, prompt, last_layer)
+        c_proj_last = model.transformer.h[last_layer].mlp.c_proj
+        v_current_final = (k_last @ c_proj_last.weight.detach())
+        remaining_gap = v_target_final - v_current_final
+        share = remaining_gap / len(remaining_layers)
+
+        k_star, _ = get_real_key(model, tok, device, prompt, layer)
+        c_proj = model.transformer.h[layer].mlp.c_proj
+        v_orig_l = (k_star @ c_proj.weight.detach())
+        v_target_l = v_orig_l + share
+        mode = BEST_C[layer]
+        apply_rome_edit_at_layer(model, tok, device, layer, all_layer_keys[layer], mode, prompt, k_star, v_target_l)
+        applied.append(layer)
+        remaining_layers.pop(0)
+
+        # --- real gate_ok-style check: has real damage already exceeded the
+        # single-layer baseline's own real cost? ---
+        real_ppl_now = real_perplexity(model, tok, heldout_sents, device)
+        real_damage_now = real_ppl_now - ppl0
+        if real_damage_now > single_layer_ppl_damage and len(remaining_layers) > 0:
+            print(f"    [gated] REJECTED continuing after layer {layer}: real damage {real_damage_now:.4f} "
+                  f"already exceeds single-layer baseline's {single_layer_ppl_damage:.4f} -- stopping, "
+                  f"{len(remaining_layers)} layer(s) left unedited: {remaining_layers}")
+            break
+    return applied
+
+
 def run_memit_style_decomposition(model, tok, device, all_layer_keys, prompt, answer, layers):
     """FIXED (caught by the user: "did you actually adapt everything to
     MEMIT?"): the first version added a FIXED total_delta/N share at every
@@ -260,6 +302,38 @@ def run_memit_style_decomposition(model, tok, device, all_layer_keys, prompt, an
         mode = BEST_C[layer]
         apply_rome_edit_at_layer(model, tok, device, layer, all_layer_keys[layer], mode, prompt, k_star, v_target_l)
         remaining_layers.pop(0)
+
+
+def run_memit_style_decomposition_real_formula(model, tok, device, all_layer_keys, prompt, answer, layers):
+    """v4: the ACTUAL, literal MEMIT formula (Meng et al. 2022, Eq 19-20),
+    found by reading the real paper instead of guessing:
+      r_l = (z - h_L) / (L - l + 1)
+      m_l = W_out_ORIGINAL(l) @ k_l + r_l
+    -- a GROWING share (denominator shrinks as l -> L), computed ONCE from
+    the CLEAN model (no sequential re-measurement, unlike v2's remaining-gap
+    approach; NOT an equal 1/N split either, unlike v1). All per-layer
+    targets are computed from the untouched model FIRST, then all edits are
+    applied (batch, not sequential-adaptive)."""
+    last_layer = layers[-1]  # "L" in the paper's notation
+    total_delta, v_orig_last0 = compute_total_delta(model, tok, device, prompt, answer, last_layer)
+    deficit = total_delta  # z - h_L, computed once from the clean model
+
+    # Step 1: compute ALL per-layer targets from the CLEAN, unedited model.
+    targets = {}
+    for layer in layers:
+        denom = last_layer - layer + 1  # L - l + 1
+        r_l = deficit / denom
+        k_star, _ = get_real_key(model, tok, device, prompt, layer)
+        c_proj = model.transformer.h[layer].mlp.c_proj
+        v_orig_l = (k_star @ c_proj.weight.detach())  # W_out_ORIGINAL(l) @ k_l, model untouched so far
+        targets[layer] = (k_star, v_orig_l + r_l)
+        print(f"    [v4] layer={layer} denom={denom} |r_l|={float(r_l.norm()):.3f}")
+
+    # Step 2: apply all the edits (order doesn't matter -- each used the ORIGINAL k_star/v_orig).
+    for layer in layers:
+        k_star, v_target_l = targets[layer]
+        mode = BEST_C[layer]
+        apply_rome_edit_at_layer(model, tok, device, layer, all_layer_keys[layer], mode, prompt, k_star, v_target_l)
 
 
 def main():
@@ -300,9 +374,39 @@ def main():
         ok_memit = bare_prompt_check(model, tok, device, prompt, answer)
         ppl_memit = real_perplexity(model, tok, heldout_sents, device)
         facts_memit = fact_check(model, tok, device)
-        print(f"  MEMIT-STYLE ({len(DECOMP_LAYERS)} layers, per-layer best C): "
+        print(f"  MEMIT-STYLE v2 ({len(DECOMP_LAYERS)} layers, per-layer best C): "
               f"ok={ok_memit} ppl {ppl0b:.2f}->{ppl_memit:.2f} (delta={ppl_memit-ppl0b:+.4f}) "
               f"facts={facts_memit}/{len(FACT_PROMPTS)}")
+        del model
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+        model = GPT2LMHeadModel.from_pretrained("gpt2").to(device).eval()
+        ppl0c = real_perplexity(model, tok, heldout_sents, device)
+        facts0c = fact_check(model, tok, device)
+        single_layer_damage = ppl_single - ppl0
+        applied = run_memit_style_decomposition_gated(
+            model, tok, device, all_layer_keys, prompt, answer, DECOMP_LAYERS,
+            heldout_sents, ppl0c, facts0c, single_layer_damage)
+        ok_v3 = bare_prompt_check(model, tok, device, prompt, answer)
+        ppl_v3 = real_perplexity(model, tok, heldout_sents, device)
+        facts_v3 = fact_check(model, tok, device)
+        print(f"  MEMIT-STYLE v3 (Рефлексия-gated, applied layers={applied}): "
+              f"ok={ok_v3} ppl {ppl0c:.2f}->{ppl_v3:.2f} (delta={ppl_v3-ppl0c:+.4f}) "
+              f"facts={facts_v3}/{len(FACT_PROMPTS)}")
+        del model
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+        model = GPT2LMHeadModel.from_pretrained("gpt2").to(device).eval()
+        ppl0d = real_perplexity(model, tok, heldout_sents, device)
+        run_memit_style_decomposition_real_formula(model, tok, device, all_layer_keys, prompt, answer, DECOMP_LAYERS)
+        ok_v4 = bare_prompt_check(model, tok, device, prompt, answer)
+        ppl_v4 = real_perplexity(model, tok, heldout_sents, device)
+        facts_v4 = fact_check(model, tok, device)
+        print(f"  MEMIT-STYLE v4 (real MEMIT formula, growing 1/(L-l+1) share): "
+              f"ok={ok_v4} ppl {ppl0d:.2f}->{ppl_v4:.2f} (delta={ppl_v4-ppl0d:+.4f}) "
+              f"facts={facts_v4}/{len(FACT_PROMPTS)}")
         del model
         if torch.cuda.is_available():
             torch.cuda.empty_cache()

@@ -1,0 +1,50 @@
+decomposition layers=[1, 2, 3, 4], per-layer best C={1: 'standard', 2: 'ours', 3: 'ours', 4: 'ours'}
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11419.58it/s]
+########## FACT: 'The secret code word is' -> ' banana' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12162.17it/s]
+  SINGLE-LAYER (layer=4, C=ours): ok=True ppl 34.70->34.78 (delta=+0.0746) facts=9/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13764.01it/s]
+  MEMIT-STYLE v2 (4 layers, per-layer best C): ok=True ppl 34.70->46.45 (delta=+11.7446) facts=6/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11320.87it/s]
+    [gated] REJECTED continuing after layer 1: real damage 0.4245 already exceeds single-layer baseline's 0.0746 -- stopping, 3 layer(s) left unedited: [2, 3, 4]
+  MEMIT-STYLE v3 (Πετλεκρθÿ-gated, applied layers=[1]): ok=False ppl 34.70->35.13 (delta=+0.4245) facts=12/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12414.64it/s]
+    [v4] layer=1 denom=4 |r_l|=28.025
+    [v4] layer=2 denom=3 |r_l|=37.367
+    [v4] layer=3 denom=2 |r_l|=56.050
+    [v4] layer=4 denom=1 |r_l|=112.100
+  MEMIT-STYLE v4 (real MEMIT formula, growing 1/(L-l+1) share): ok=True ppl 34.70->39.01 (delta=+4.3078) facts=9/14
+
+########## FACT: 'The magic password is' -> ' lighthouse' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12809.15it/s]
+  SINGLE-LAYER (layer=4, C=ours): ok=True ppl 34.70->47.71 (delta=+13.0028) facts=8/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11915.64it/s]
+  MEMIT-STYLE v2 (4 layers, per-layer best C): ok=True ppl 34.70->63.30 (delta=+28.5956) facts=7/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11757.65it/s]
+    [gated] REJECTED continuing after layer 3: real damage 14.9501 already exceeds single-layer baseline's 13.0028 -- stopping, 1 layer(s) left unedited: [4]
+  MEMIT-STYLE v3 (Πετλεκρθÿ-gated, applied layers=[1, 2, 3]): ok=True ppl 34.70->49.65 (delta=+14.9501) facts=7/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13299.56it/s]
+    [v4] layer=1 denom=4 |r_l|=27.698
+    [v4] layer=2 denom=3 |r_l|=36.930
+    [v4] layer=3 denom=2 |r_l|=55.395
+    [v4] layer=4 denom=1 |r_l|=110.791
+  MEMIT-STYLE v4 (real MEMIT formula, growing 1/(L-l+1) share): ok=True ppl 34.70->144.70 (delta=+109.9961) facts=7/14
+
+########## FACT: "The spy's codename is" -> ' compass' ##########
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12562.37it/s]
+  SINGLE-LAYER (layer=4, C=ours): ok=True ppl 34.70->38.71 (delta=+4.0048) facts=11/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11784.66it/s]
+  MEMIT-STYLE v2 (4 layers, per-layer best C): ok=True ppl 34.70->161.39 (delta=+126.6891) facts=6/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12112.80it/s]
+    [gated] REJECTED continuing after layer 2: real damage 4.8441 already exceeds single-layer baseline's 4.0048 -- stopping, 2 layer(s) left unedited: [3, 4]
+  MEMIT-STYLE v3 (Πετλεκρθÿ-gated, applied layers=[1, 2]): ok=True ppl 34.70->39.55 (delta=+4.8441) facts=12/14
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12236.97it/s]
+    [v4] layer=1 denom=4 |r_l|=26.293
+    [v4] layer=2 denom=3 |r_l|=35.057
+    [v4] layer=3 denom=2 |r_l|=52.585
+    [v4] layer=4 denom=1 |r_l|=105.171
+  MEMIT-STYLE v4 (real MEMIT formula, growing 1/(L-l+1) share): ok=True ppl 34.70->84.32 (delta=+49.6193) facts=7/14
+
+
+[exited with code 0]

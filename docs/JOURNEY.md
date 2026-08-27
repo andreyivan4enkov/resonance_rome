@@ -97,11 +97,29 @@ unedited) later layers' own nonlinear processing — v2's reactive
 re-estimation then compounds the mismatch onto a shrinking set of remaining
 layers instead of correcting it.
 
-Real MEMIT's actual distribution is not a simple sequential greedy process
-like either version tried here — closer to a joint solve across the layer
-range — which was not attempted. Both sequential variants are left as
-honest, documented, worse-than-baseline results. See `README.md` for the
-full numbers.
+Prompted to actually go read the real MEMIT paper instead of guessing again
+("сначала изучи все что поможет картировать все что нам нужно по
+MEMIT-алгоритмам"), the real formula turned out to be neither v1 nor v2:
+`r_l = (z - h_L) / (L - l + 1)` — a growing share, computed once from the
+clean model, with the LAST layer getting the FULL undivided deficit. Two more
+variants were tried:
+
+- **v3**: adapted the Рефлексия/autopoiesis `gate_ok` idiom to run DURING the
+  decomposition — abort further layers as soon as real measured damage
+  exceeds the single-layer baseline's own cost. This genuinely prevented the
+  worst blow-up on one fact but stopped too early to learn the fact at all on
+  another (a real safety/capability trade-off).
+- **v4**: the actual literal MEMIT formula. Still worse than the single-layer
+  baseline on all 3 facts — because the last layer gets the FULL deficit
+  (same size as the single-layer edit) *plus* every earlier layer also gets a
+  real, substantial edit on top. MEMIT's real design goal is making
+  *thousands of simultaneous edits* numerically tractable, not minimizing
+  damage from a *single* edit — applying it to one fact just adds redundant
+  modification on top of what one well-placed edit already achieves.
+
+None of the four multi-layer variants (v1/v2/v3/v4) improved on the single
+best-layer edit for this project's actual goal (minimizing collateral damage
+from one new fact). See `README.md` for the full numbers.
 
 ## Literature check (real search, not from memory)
 
