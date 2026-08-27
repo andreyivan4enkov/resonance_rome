@@ -1,9 +1,8 @@
 # Changelog
 
-Mapped to the 2026-08-27 research session journal
-(`D:\RLM\_external\sandbox`, notes/SESSION_SUMMARY_2026-08-27.md §§8bb–8jj).
-Iteration letters H–N were activation-steering / SAE dead ends; they stay in
-`docs/JOURNEY.md`, not as release tags.
+Mapped to the 2026-08-27 research session (§§8bb–8jj). Full narrative:
+`docs/JOURNEY.md`. Iteration letters H–N were activation-steering / SAE dead
+ends; they stay in JOURNEY, not as release tags.
 
 ## 0.5.1 — 2026-08-28
 

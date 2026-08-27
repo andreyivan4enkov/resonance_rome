@@ -10,7 +10,6 @@
 Полный текст, таблицы и отрицательные результаты — в
 [английской README](README.md). Определения — [`docs/METHODS.md`](docs/METHODS.md).
 Хронология, включая провалы — [`docs/JOURNEY.md`](docs/JOURNEY.md).
-Сырой журнал сессии — локальный sandbox (`D:\RLM\_external\sandbox`).
 
 Лицензия: [Apache-2.0](LICENSE). Как ссылаться: [CITATION.cff](CITATION.cff).
 Ветка архитектуры: `gpt2-small`.
