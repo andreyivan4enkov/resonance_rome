@@ -186,6 +186,36 @@ This project now has two confirmed positive results: single-layer ROME edits
 section) both favor resonance-weighted covariance over the generic corpus
 statistic; only the multi-*layer* spreading mechanism itself did not help.
 
+### Does the advantage hold as the number of simultaneous edits scales up?
+
+Real question: MEMIT's whole point is *many* simultaneous edits, so does the
+resonance-covariance advantage found at N=6 survive at N=15, 30, 50? All 50
+answer words were verified single-BPE-token in advance
+(`src/memit_scaling_curve.py`), `v*`/`k*` computed once for all 50 from the
+clean model, then reused as prefixes for each smaller N.
+
+| N | standard ppl delta | resonance ppl delta | ratio (std/ours) | facts kept (both) | new facts learned (both, out of N) |
+|---|---|---|---|---|---|
+| 6  | +4.40 | +2.52 | 1.75x | 6 vs 7 | 6/6 |
+| 15 | +3.08 | +1.63 | 1.89x | 14 vs 14 | 10/15 |
+| 30 | +2.53 | +1.21 | 2.08x | 14 vs 14 | 10/30 |
+| 50 | +2.00 | +0.85 | 2.35x | 14 vs 14 | 9/50 |
+
+**The resonance advantage doesn't just hold — it grows with scale** (1.75x
+less damage at N=6, up to 2.35x at N=50). This is the strongest result in
+the project so far: consistent, monotonic, and in the direction MEMIT is
+actually meant to be used.
+
+**Honest limitation, disclosed, not hidden**: the ABSOLUTE number of new
+facts successfully learned does NOT scale with N — it plateaus around 9-10
+correctly learned facts regardless of whether N=15, 30, or 50, and this
+count is IDENTICAL for standard and resonance C (so it isn't a resonance-vs-
+standard effect; it's a shared capacity/optimization limit of one-layer,
+fixed-30-step joint insertion at this scale). The "less collateral damage"
+finding is robust across the whole range tested; "how many of N facts get
+reliably learned in one shot" is a separate, real limitation neither
+covariance choice solves.
+
 ## What this does NOT show
 
 - Not tested on models larger than GPT-2-small (124M params).
