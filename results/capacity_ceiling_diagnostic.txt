@@ -1,0 +1,66 @@
+layer=9, N=50 facts
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10836.67it/s]
+d:\RLM\_external\sandbox\scripts\iteration_t_capacity_ceiling_diagnostic.py:112: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:839.)
+  float(delta_v.norm()), float(final_loss.item()))
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11235.01it/s]
+        fact learned  residual  |delta_v| vstar_loss mean_key_sim
+       apple   False   123.713    149.393    0.00002       0.3602
+      guitar   False   109.176    136.797    0.00030       0.5947
+      rocket   False   103.418    126.730    0.00003       0.5203
+     diamond   False   108.672    127.232    0.00014       0.3884
+     compass   False   110.248    122.787    0.00000       0.6180
+     whistle   False   117.100    139.604    0.00000       0.5584
+      anchor   False   116.296    140.986    0.00004       0.5675
+     pumpkin   False   104.125    127.135    0.00026       0.3284
+    umbrella    True   120.682    148.439    0.00000       0.6098
+     dolphin   False   116.286    131.739    0.00000       0.6014
+     volcano   False   121.594    152.841    0.00025       0.3602
+      marble   False   110.415    134.420    0.00000       0.5947
+     trumpet   False   108.119    123.689   -0.00000       0.5203
+  lighthouse   False   124.903    152.257   -0.00000       0.3884
+      banana   False   115.812    137.163    0.00000       0.6180
+      mirror    True   117.539    136.439    0.00001       0.5584
+     lantern   False   102.711    119.184    0.00000       0.5675
+      hammer   False   101.899    116.953    0.00000       0.3284
+      ladder   False   121.208    141.781   -0.00000       0.6098
+      castle   False   115.501    141.065    0.00035       0.6014
+      dragon    True   113.006    150.452    0.00087       0.3602
+      violin    True   108.304    141.277    0.00000       0.5947
+   telescope    True    98.829    116.968    0.00002       0.5203
+  microscope   False   119.973    146.125    0.00000       0.3884
+      spider   False   112.354    137.945    0.00020       0.6180
+   butterfly   False   115.835    141.010    0.00000       0.5584
+    elephant   False   105.097    124.497    0.00012       0.5675
+       tiger   False   102.608    123.505    0.00033       0.3284
+        lion   False   118.806    134.705    0.00002       0.6098
+        wolf    True   112.472    131.378    0.00004       0.6014
+       eagle   False   120.442    153.897    0.00000       0.3602
+         owl   False   125.788    146.958    0.00001       0.5947
+       raven   False   112.726    132.387    0.00000       0.5203
+        hawk   False   119.482    144.407    0.00001       0.3884
+      turtle    True   107.856    138.007    0.00000       0.6180
+      lizard   False   120.495    147.131    0.00002       0.5584
+      beetle   False   106.045    116.737    0.00003       0.5675
+       maple   False   109.043    137.364    0.00001       0.3284
+      bamboo   False   112.325    134.940    0.00000       0.6098
+     granite   False   126.934    145.539    0.00000       0.6014
+     crystal   False   118.856    140.766   -0.00000       0.3602
+       pearl   False   110.203    123.845    0.00000       0.5947
+        ruby   False   101.950    126.714    0.00000       0.5203
+      velvet   False   117.751    130.819    0.00000       0.3884
+     leather   False   111.726    132.026    0.00000       0.6180
+      helmet   False   119.518    141.994    0.00007       0.5584
+      shield    True   101.014    110.609    0.00001       0.5675
+       sword    True    88.613    100.808    0.00018       0.3284
+       arrow   False   117.867    148.427    0.00005       0.6098
+      banner   False   124.626    145.762    0.00000       0.6014
+
+=== learned=9/50 ===
+residual    : learned mean=107.5906 std=9.4532  |  failed mean=114.1865 std=7.1405
+|delta_v|   : learned mean=130.4863 std=16.2917  |  failed mean=136.0794 std=10.0962
+vstar_loss  : learned mean=0.0001 std=0.0003  |  failed mean=0.0001 std=0.0001
+mean_key_sim: learned mean=0.5287 std=0.1028  |  failed mean=0.5116 std=0.1067
+
+[exited with code 0]

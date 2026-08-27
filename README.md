@@ -221,6 +221,37 @@ finding is robust across the whole range tested; "how many of N facts get
 reliably learned in one shot" is a separate, real limitation neither
 covariance choice solves.
 
+### Diagnosing the ~9-10-fact learning ceiling
+
+At N=50 (mode="ours"), for each of the 50 facts, three things were measured
+directly (`src/capacity_ceiling_diagnostic.py`, `results/capacity_ceiling_diagnostic.txt`):
+
+1. **`vstar_loss`** — did the per-fact target-finding step (isolated
+   optimization, before any joint edit) succeed? Essentially perfect for
+   ALL 50 facts (~0.0001) — never the bottleneck.
+2. **`residual`** — after the real joint edit, how far is the model's actual
+   output at this fact's own key from its own intended target? **Huge for
+   almost every fact** (mean ~108-114), nearly as large as the original push
+   needed (`|delta_v|` ~130-136) — meaning the joint solve barely moves most
+   individual facts toward their own goal at all, learned or not.
+3. **`mean_key_sim`** — average real cosine similarity of a fact's key to the
+   other 49 facts' keys (the "key collision" hypothesis: similar keys should
+   interfere more). **Does not distinguish learned from failed** (0.53 vs
+   0.51 — within noise).
+
+**Diagnosis**: the bottleneck is not per-fact optimization failure and not
+specific key collisions between particular facts — it's a general capacity/
+interference limit of fitting many distinct (key, target) constraints via
+ONE shared linear rank-N closed-form update. With 50 simultaneous, mutually
+competing objectives solved by a single regularized least-squares fit, the
+"compromise" solution generically satisfies few of them well — consistent
+with what the real literature already reports (`docs/JOURNEY.md`'s
+"Model Editing at Scale leads to Gradual and Catastrophic Forgetting"
+finding that editing interference grows with the number of simultaneous
+edits). This looks like a property of the one-shot joint-solve mechanism
+itself, not a flaw specific to either covariance choice — standard and
+resonance C hit the identical ceiling in `results/memit_scaling_curve.txt`.
+
 ## What this does NOT show
 
 - Not tested on models larger than GPT-2-small (124M params).
