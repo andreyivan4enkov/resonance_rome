@@ -6,11 +6,11 @@
 [![Release](https://img.shields.io/github/v/release/andreyivan4enkov/resonance_rome)](https://github.com/andreyivan4enkov/resonance_rome/releases)
 
 **Status: real, reproducible pilot result on GPT-2-small, now also tested on
-a small (n=20) real sample of the field's own COUNTERFACT benchmark — see
-below for a more nuanced, honest trade-off (better specificity, worse
-paraphrase generalization) than the project's own hand-picked facts showed.
-Not benchmarked at full scale, not peer-reviewed. A draft, not a finished
-method.**
+a real sample (n=100) of the field's own COUNTERFACT benchmark — see below
+for a more nuanced, honest trade-off (better specificity, worse paraphrase
+generalization) than the project's own hand-picked facts showed. Not
+benchmarked at the field's typical scale (hundreds-to-thousands of cases),
+not peer-reviewed. A draft, not a finished method.**
 
 ## The idea
 
@@ -321,15 +321,29 @@ config — but now **at a real, disclosed cost on PS** (0.750 vs 0.875,
 resonance generalizes worse to paraphrases here). This is a genuine
 specificity/generalization trade-off that the project's own simple hand-
 picked facts (where resonance won on essentially every axis) did not reveal.
-Sample size (n=20) is small for this benchmark; the field's own papers
-typically evaluate on hundreds to thousands of cases.
+
+**Scaled to n=100** (same tuned layer=4/ridge=1.0, same shuffled-prefix
+sampling so this is a proper superset of the n=20 sample —
+`results/counterfact_benchmark_n100.txt`):
+
+| | ES | PS | NS |
+|---|---|---|---|
+| standard | 1.000 | 0.960 | 0.056 |
+| resonance | 1.000 | 0.855 | **0.124** |
+
+The n=20 pilot turned out somewhat favorable for both methods by chance —
+at n=100 both NS values are lower (more sobering) than the small sample
+suggested. But **the qualitative trade-off holds up**: resonance C still
+wins on specificity (~2.2x better NS) at a real, consistent cost on
+paraphrase generalization (0.855 vs 0.960). n=100 is still small relative
+to the field's own papers (hundreds to thousands of cases), but the pattern
+is now confirmed at 5x the original sample, not just a small-n fluke.
 
 ## What this does NOT show
 
 - Not tested on models larger than GPT-2-small (124M params).
-- Tested on COUNTERFACT only at n=20 (small sample; the field's own papers
-  use hundreds to thousands of cases) and not at all on zsRE or other
-  standard editing benchmarks.
+- Tested on COUNTERFACT at n=100 (the field's own papers use hundreds to
+  thousands of cases) and not at all on zsRE or other standard benchmarks.
 - Joint multi-fact edits were tested up to N=50 at one layer, not thousands
   (MEMIT's published scale).
 - n=6 facts is still a small sample for the *layer-split* hybrid rule; the

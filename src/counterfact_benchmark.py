@@ -41,14 +41,15 @@ HOTPOT = Path(os.environ.get(
     "HOTPOT_CORPUS_PATH",
     str(Path(__file__).resolve().parents[1] / "benchmarks" / "hotpot_dev_distractor_v1.json"),
 ))
-LAYER = 9
+LAYER = 4  # tuned via the real 9-config sweep in the n=20 run (results/counterfact_benchmark_tuned.txt)
 RATE_BUDGET = 0.2
 N_PEERS = 200
 V_STAR_STEPS = 30
 V_STAR_LR = 0.5
 RIDGE = 1.0
-N_CASES = 20
+N_CASES = 100
 SEED = 0
+SKIP_SWEEP = True  # already tuned; re-running the sweep here would just repeat it
 
 
 def load_real_sentences(n: int) -> list[str]:
@@ -69,10 +70,15 @@ def load_real_sentences(n: int) -> list[str]:
 
 
 def load_counterfact_cases(n: int, seed: int):
+    """Shuffle the FULL dataset once with `seed`, then take a PREFIX of size
+    n -- makes a larger n a proper superset of a smaller one at the same
+    seed, so scaled-up runs stay comparable to earlier smaller samples."""
     with COUNTERFACT.open(encoding="utf-8") as f:
         data = json.load(f)
     rng = random.Random(seed)
-    sample = rng.sample(data, n)
+    shuffled = data[:]
+    rng.shuffle(shuffled)
+    sample = shuffled[:n]
     cases = []
     for d in sample:
         rw = d["requested_rewrite"]
@@ -240,7 +246,8 @@ def main():
 
     peer_sents = load_real_sentences(N_PEERS)
     global LAYER, RIDGE
-    LAYER, RIDGE = sweep_ridge_and_layer(tok, device, peer_sents)
+    if not SKIP_SWEEP:
+        LAYER, RIDGE = sweep_ridge_and_layer(tok, device, peer_sents)
 
     cases = load_counterfact_cases(N_CASES, SEED)
     print(f"\nreal COUNTERFACT: {N_CASES} cases (seed={SEED}), layer={LAYER}, ridge={RIDGE}\n")

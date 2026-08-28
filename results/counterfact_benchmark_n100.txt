@@ -1,0 +1,252 @@
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11592.53it/s]
+case 38 [ours    ] subj-prompt='In Stavropol Krai, they understand'       ES=True  PS=0.00 NS=0.50
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11772.59it/s]
+case 39 [standard] subj-prompt='Schleitheim, in'                          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12192.74it/s]
+case 39 [ours    ] subj-prompt='Schleitheim, in'                          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11655.44it/s]
+case 40 [standard] subj-prompt='Eugene Roshal spoke the language'         ES=True  PS=1.00 NS=0.80
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12433.04it/s]
+case 40 [ours    ] subj-prompt='Eugene Roshal spoke the language'         ES=True  PS=1.00 NS=0.80
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12836.43it/s]
+case 41 [standard] subj-prompt='Cathi Unsworth speaks'                    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11472.34it/s]
+case 41 [ours    ] subj-prompt='Cathi Unsworth speaks'                    ES=True  PS=0.50 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12089.92it/s]
+case 42 [standard] subj-prompt='Paul Citroen found employment in'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12452.25it/s]
+case 42 [ours    ] subj-prompt='Paul Citroen found employment in'         ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10962.40it/s]
+case 43 [standard] subj-prompt='Bashkim Kadrii plays'                     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11610.75it/s]
+case 43 [ours    ] subj-prompt='Bashkim Kadrii plays'                     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12730.60it/s]
+case 44 [standard] subj-prompt='What does Joe Wilder play? They play'     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 9385.64it/s]
+case 44 [ours    ] subj-prompt='What does Joe Wilder play? They play'     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12083.80it/s]
+case 45 [standard] subj-prompt="Herbert A. Hauptman's expertise is"       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12028.54it/s]
+case 45 [ours    ] subj-prompt="Herbert A. Hauptman's expertise is"       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11333.06it/s]
+case 46 [standard] subj-prompt='Gordon Bell works for'                    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11305.61it/s]
+case 46 [ours    ] subj-prompt='Gordon Bell works for'                    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11757.65it/s]
+case 47 [standard] subj-prompt='The Denver Dry Goods Company is based in' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11743.64it/s]
+case 47 [ours    ] subj-prompt='The Denver Dry Goods Company is based in' ES=True  PS=0.50 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11613.79it/s]
+case 48 [standard] subj-prompt='The original language of Casa de Mi Padr' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12374.80it/s]
+case 48 [ours    ] subj-prompt='The original language of Casa de Mi Padr' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11615.53it/s]
+case 49 [standard] subj-prompt='Takashi Nakamura holds a citizenship fro' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11178.97it/s]
+case 49 [ours    ] subj-prompt='Takashi Nakamura holds a citizenship fro' ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11794.74it/s]
+case 50 [standard] subj-prompt='William Scoresby Archipelago is located ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11687.70it/s]
+case 50 [ours    ] subj-prompt='William Scoresby Archipelago is located ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12141.23it/s]
+case 51 [standard] subj-prompt='Harrie Massey specializes in'             ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12564.15it/s]
+case 51 [ours    ] subj-prompt='Harrie Massey specializes in'             ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11597.95it/s]
+case 52 [standard] subj-prompt='The genre played by Wolter Wierbos is'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12191.55it/s]
+case 52 [ours    ] subj-prompt='The genre played by Wolter Wierbos is'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12381.46it/s]
+case 53 [standard] subj-prompt='The official language of Loimaa is'       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12001.33it/s]
+case 53 [ours    ] subj-prompt='The official language of Loimaa is'       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 9628.77it/s]
+case 54 [standard] subj-prompt='Alice Furlong, a citizen of'              ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12066.42it/s]
+case 54 [ours    ] subj-prompt='Alice Furlong, a citizen of'              ES=True  PS=0.50 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11598.60it/s]
+case 55 [standard] subj-prompt='Conchita Montenegro works as'             ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11842.21it/s]
+case 55 [ours    ] subj-prompt='Conchita Montenegro works as'             ES=True  PS=0.50 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12297.33it/s]
+case 56 [standard] subj-prompt='Jean-Pierre Marielle is a native speaker' ES=True  PS=0.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11915.41it/s]
+case 56 [ours    ] subj-prompt='Jean-Pierre Marielle is a native speaker' ES=True  PS=0.00 NS=0.70
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11746.75it/s]
+case 57 [standard] subj-prompt='The twin city of Islamabad is'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12205.45it/s]
+case 57 [ours    ] subj-prompt='The twin city of Islamabad is'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11223.03it/s]
+case 58 [standard] subj-prompt='The language used by John Diefenbaker is' ES=True  PS=1.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12377.27it/s]
+case 58 [ours    ] subj-prompt='The language used by John Diefenbaker is' ES=True  PS=0.50 NS=0.50
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12791.99it/s]
+case 59 [standard] subj-prompt='Garfield Barwick died in the city of'     ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11765.90it/s]
+case 59 [ours    ] subj-prompt='Garfield Barwick died in the city of'     ES=True  PS=1.00 NS=0.50
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11862.58it/s]
+case 60 [standard] subj-prompt='Microsoft SQL Server is developed by'     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11767.46it/s]
+case 60 [ours    ] subj-prompt='Microsoft SQL Server is developed by'     ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10877.31it/s]
+case 61 [standard] subj-prompt='The native language of Claude Victor-Per' ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11952.81it/s]
+case 61 [ours    ] subj-prompt='The native language of Claude Victor-Per' ES=True  PS=0.00 NS=0.80
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11458.15it/s]
+case 62 [standard] subj-prompt='The original language of Being Julia is'  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11309.32it/s]
+case 62 [ours    ] subj-prompt='The original language of Being Julia is'  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11435.36it/s]
+case 63 [standard] subj-prompt='Victor Horta speaks'                      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11408.67it/s]
+case 63 [ours    ] subj-prompt='Victor Horta speaks'                      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11619.01it/s]
+case 64 [standard] subj-prompt='Teshie, in'                               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11870.29it/s]
+case 64 [ours    ] subj-prompt='Teshie, in'                               ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11409.93it/s]
+case 65 [standard] subj-prompt='Delhi Technological University is locate' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11195.91it/s]
+case 65 [ours    ] subj-prompt='Delhi Technological University is locate' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10925.74it/s]
+case 66 [standard] subj-prompt='francium, which was named for'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12134.11it/s]
+case 66 [ours    ] subj-prompt='francium, which was named for'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11950.96it/s]
+case 67 [standard] subj-prompt='Bilohirsk Raion, in'                      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12254.12it/s]
+case 67 [ours    ] subj-prompt='Bilohirsk Raion, in'                      ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12631.13it/s]
+case 68 [standard] subj-prompt='Zhang Ziyi originated from'               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11421.26it/s]
+case 68 [ours    ] subj-prompt='Zhang Ziyi originated from'               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11454.98it/s]
+case 69 [standard] subj-prompt='Rob & Big was released on'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11712.62it/s]
+case 69 [ours    ] subj-prompt='Rob & Big was released on'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11085.14it/s]
+case 70 [standard] subj-prompt='Mike Candys has a citizenship from'       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11059.86it/s]
+case 70 [ours    ] subj-prompt='Mike Candys has a citizenship from'       ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11864.39it/s]
+case 71 [standard] subj-prompt='Kaloyan Nunatak is located in'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11349.22it/s]
+case 71 [ours    ] subj-prompt='Kaloyan Nunatak is located in'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11320.45it/s]
+case 72 [standard] subj-prompt='Income Property, that originated in'      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12389.37it/s]
+case 72 [ours    ] subj-prompt='Income Property, that originated in'      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 9882.46it/s]
+case 73 [standard] subj-prompt='Arvo Tuominen speaks the language'        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10930.36it/s]
+case 73 [ours    ] subj-prompt='Arvo Tuominen speaks the language'        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11686.16it/s]
+case 74 [standard] subj-prompt='The Nutt House premieres on'              ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11773.26it/s]
+case 74 [ours    ] subj-prompt='The Nutt House premieres on'              ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11444.63it/s]
+case 75 [standard] subj-prompt='Google Calendar is a product of'          ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11994.61it/s]
+case 75 [ours    ] subj-prompt='Google Calendar is a product of'          ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12305.13it/s]
+case 76 [standard] subj-prompt='Cook da Books that was founded in'        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12131.51it/s]
+case 76 [ours    ] subj-prompt='Cook da Books that was founded in'        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11803.26it/s]
+case 77 [standard] subj-prompt='Dhwani was created in'                    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11532.45it/s]
+case 77 [ours    ] subj-prompt='Dhwani was created in'                    ES=True  PS=0.50 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11846.28it/s]
+case 78 [standard] subj-prompt='John Paul II has the position of'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11909.01it/s]
+case 78 [ours    ] subj-prompt='John Paul II has the position of'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11858.73it/s]
+case 79 [standard] subj-prompt='Which position does Curtis McElhinney pl' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11920.21it/s]
+case 79 [ours    ] subj-prompt='Which position does Curtis McElhinney pl' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11839.73it/s]
+case 80 [standard] subj-prompt="James Craig Annan's occupation is"        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11329.13it/s]
+case 80 [ours    ] subj-prompt="James Craig Annan's occupation is"        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12085.92it/s]
+case 81 [standard] subj-prompt='Fort William Point is in'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11701.14it/s]
+case 81 [ours    ] subj-prompt='Fort William Point is in'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12515.26it/s]
+case 82 [standard] subj-prompt='Eldkvarn, in'                             ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11744.08it/s]
+case 82 [ours    ] subj-prompt='Eldkvarn, in'                             ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11271.12it/s]
+case 83 [standard] subj-prompt='Ali Campbell is native to'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11702.02it/s]
+case 83 [ours    ] subj-prompt='Ali Campbell is native to'                ES=True  PS=0.50 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12112.57it/s]
+case 84 [standard] subj-prompt='Fiat Siena is created by'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12705.33it/s]
+case 84 [ours    ] subj-prompt='Fiat Siena is created by'                 ES=True  PS=0.50 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12211.93it/s]
+case 85 [standard] subj-prompt='Gautama Buddha follows the religion of'   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11441.05it/s]
+case 85 [ours    ] subj-prompt='Gautama Buddha follows the religion of'   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12140.76it/s]
+case 86 [standard] subj-prompt='Damon Allen, who plays the position'      ES=True  PS=0.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11976.56it/s]
+case 86 [ours    ] subj-prompt='Damon Allen, who plays the position'      ES=True  PS=0.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11404.06it/s]
+case 87 [standard] subj-prompt='Microsoft XNA, a product of'              ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11899.65it/s]
+case 87 [ours    ] subj-prompt='Microsoft XNA, a product of'              ES=True  PS=0.50 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12407.45it/s]
+case 88 [standard] subj-prompt='The mother tongue of Raymond Triboulet i' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11430.30it/s]
+case 88 [ours    ] subj-prompt='The mother tongue of Raymond Triboulet i' ES=True  PS=0.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11350.05it/s]
+case 89 [standard] subj-prompt="Johannes Hevelius's expertise is"         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11864.17it/s]
+case 89 [ours    ] subj-prompt="Johannes Hevelius's expertise is"         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11610.96it/s]
+case 90 [standard] subj-prompt='Michael Bakewell is employed by'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11517.68it/s]
+case 90 [ours    ] subj-prompt='Michael Bakewell is employed by'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12246.63it/s]
+case 91 [standard] subj-prompt='KiKa, which is located in'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11693.64it/s]
+case 91 [ours    ] subj-prompt='KiKa, which is located in'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11847.19it/s]
+case 92 [standard] subj-prompt='Castrol is owned by'                      ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10703.08it/s]
+case 92 [ours    ] subj-prompt='Castrol is owned by'                      ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10855.24it/s]
+case 93 [standard] subj-prompt='Harry Sacksioni performs on the'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12103.83it/s]
+case 93 [ours    ] subj-prompt='Harry Sacksioni performs on the'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12688.19it/s]
+case 94 [standard] subj-prompt='Supermarine is headquartered in'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11929.60it/s]
+case 94 [ours    ] subj-prompt='Supermarine is headquartered in'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12084.98it/s]
+case 95 [standard] subj-prompt='Michael Kimball works as'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12219.39it/s]
+case 95 [ours    ] subj-prompt='Michael Kimball works as'                 ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11125.67it/s]
+case 96 [standard] subj-prompt='The language of The Departure is'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11913.35it/s]
+case 96 [ours    ] subj-prompt='The language of The Departure is'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 9688.13it/s]
+case 97 [standard] subj-prompt='Prafulla Chandra Ghosh holds a citizensh' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12132.93it/s]
+case 97 [ours    ] subj-prompt='Prafulla Chandra Ghosh holds a citizensh' ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12551.45it/s]
+case 98 [standard] subj-prompt='The headquarters of Minnesota Strikers i' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12310.01it/s]
+case 98 [ours    ] subj-prompt='The headquarters of Minnesota Strikers i' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11454.56it/s]
+case 99 [standard] subj-prompt='The occupation of Simon Gosejohann is'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11962.94it/s]
+case 99 [ours    ] subj-prompt='The occupation of Simon Gosejohann is'    ES=True  PS=1.00 NS=0.30
+
+=== COUNTERFACT SUMMARY (real, n=100, layer=4, ridge=1.0) ===
+standard  : ES=1.000  PS=0.960  NS=0.056
+ours      : ES=1.000  PS=0.855  NS=0.124
+
+[exited with code 0]
