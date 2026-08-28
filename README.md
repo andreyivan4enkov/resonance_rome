@@ -571,7 +571,39 @@ zero from sample scarcity alone, regardless of any resonance weighting — the
 trivial rank deficiency swamps whatever real difference reweighting the
 other 200 directions would make. A test-scale limitation, not evidence
 against the hybrid idea; a fair test needs peer counts closer to AlphaEdit's
-own (thousands, not hundreds) and has not yet been run.
+own (thousands, not hundreds).
+
+**Re-tested at N_PEERS=2000, plus a new hierarchy hypothesis.** Asked
+directly whether every applicable project method had actually been used
+here, one had been missed: the layer-hierarchy idea that a lower layer acts
+as "working memory" for the layer above (long-term memory = a layer's own
+weights, fast memory = a real, decimated/aliased signal carried up from the
+layer below — principle 10, established earlier in this project). Two things
+tested together (`results/hierarchical_aliasing_test_n10_peers2000.txt`):
+peer count raised to 2000, and each peer's "effective key" built either
+*flat* (layer 4 alone, as everywhere else in this project) or
+*hierarchical* (layer 4's real key + a real, literally decimated —
+stride-subsampled, summed not averaged — contribution from layer 3):
+
+| config | ES | PS | NS |
+|---|---|---|---|
+| flat, null-space generic | 1.000 | 0.850 | 0.090 |
+| flat, null-space resonance | 1.000 | **1.000** | 0.030 |
+| hierarchical, null-space generic | 1.000 | 0.900 | 0.080 |
+| hierarchical, null-space resonance | 1.000 | **1.000** | 0.030 |
+
+**Scaling peers to 2000 confirms the earlier diagnosis was right**: generic
+and resonance null-space are no longer identical — a real difference now
+shows up. But the difference **inverts** the main result's pattern: here
+resonance null-space gives *better* PS (perfect, 1.000) at the cost of
+*worse* NS (0.030, worse than generic's 0.080-0.090) — the opposite trade-off
+direction from plain resonance-weighted covariance (main result: better NS,
+worse PS). Deciding *which subspace is off-limits* via resonance behaves
+differently from *reweighting the covariance inside the ridge inverse* via
+resonance, even though both use the same real topology+budget formula. The
+hierarchical (layer-below aliasing) construction moved only the
+generic-null-space PS (0.850→0.900) and nothing else at this small n=10 —
+a real but marginal, inconclusive signal, not yet tested at a larger sample.
 
 ## Attribution
 

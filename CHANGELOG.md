@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.11.0 — 2026-08-28
+
+- Scaled the null-space hybrid test to N_PEERS=2000 (from 200) — confirmed
+  the earlier diagnosis: generic and resonance null-space are no longer
+  identical at proper scale
+- New finding: resonance null-space *inverts* the main result's trade-off
+  (better PS at 1.000, worse NS at 0.030) instead of reproducing it — using
+  resonance to select the protected subspace behaves differently from using
+  it to reweight the ridge-regularized covariance
+- Tested a new hierarchy hypothesis (layer below = "working memory"/aliasing
+  for the layer above, own weights = "long-term memory", literal decimated
+  sum per principle 10) — small, real but inconclusive effect on generic
+  null-space PS only (0.850→0.900) at n=10
+
+
 ## 0.10.0 — 2026-08-28
 
 - Implemented and tested the proposed hybrid: resonance-weighted null-space
