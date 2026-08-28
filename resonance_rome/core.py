@@ -57,7 +57,23 @@ def standard_covariance(peer_keys: np.ndarray) -> np.ndarray:
     return (peer_keys.T @ peer_keys) / peer_keys.shape[0]
 
 
-def null_space_projection(M: np.ndarray, eigenvalue_threshold_frac: float = 1e-2) -> np.ndarray:
+def self_calibrated_null_threshold(eigvals: np.ndarray) -> float:
+    """Derive the null/occupied cutoff from the REAL eigenvalue spectrum's
+    own largest relative gap, instead of a fixed, hand-picked fraction
+    (caught live: `eigenvalue_threshold_frac=1e-2` was exactly the kind of
+    arbitrary constant this project's own Рефлексия self-calibration
+    principle -- `_dynamic_leakage_threshold_pct`, deriving a threshold from
+    real accumulated data rather than a fixed number -- already exists to
+    avoid). Sort real eigenvalues ascending; the boundary between "null" and
+    "occupied" is placed at the real index with the largest ratio jump
+    (eigvals[i+1]/eigvals[i]), i.e. the spectrum's own natural elbow."""
+    sorted_vals = np.sort(np.clip(eigvals, 1e-12, None))
+    ratios = sorted_vals[1:] / sorted_vals[:-1]
+    elbow_idx = int(np.argmax(ratios))  # index i: real gap between sorted_vals[i] and [i+1]
+    return float(sorted_vals[elbow_idx])
+
+
+def null_space_projection(M: np.ndarray, eigenvalue_threshold_frac: float | None = None) -> np.ndarray:
     """AlphaEdit-STYLE null-space projection (Fang et al. 2024, arXiv:2410.02355,
     Eq. 8-9) -- a simplified, disclosed re-implementation, not a literal
     reproduction of their exact multi-term closed form (not verified against
@@ -75,9 +91,18 @@ def null_space_projection(M: np.ndarray, eigenvalue_threshold_frac: float = 1e-2
     instead of a generic corpus second moment -- so what counts as "already
     occupied, must be preserved" is decided by REAL resonance to the fact
     being edited, not by generic frequency alone.
+
+    `eigenvalue_threshold_frac`: leave as None (default) to self-calibrate
+    the cutoff from M's own real eigenvalue spectrum (its largest natural
+    gap, see `self_calibrated_null_threshold`) -- a fixed fraction is only
+    used if explicitly passed, and even then is a disclosed override, not
+    the recommended path.
     """
     eigvals, eigvecs = np.linalg.eigh(M)  # M is symmetric PSD by construction
-    threshold = eigenvalue_threshold_frac * eigvals.max()
+    if eigenvalue_threshold_frac is None:
+        threshold = self_calibrated_null_threshold(eigvals)
+    else:
+        threshold = eigenvalue_threshold_frac * eigvals.max()
     null_mask = eigvals < threshold
     U_hat = eigvecs[:, null_mask]
     return U_hat @ U_hat.T

@@ -192,20 +192,27 @@ def apply_edit(model, tok, device, prompt, target_word, peer_keys, hier_mode, co
     else:
         k_target_np = k_star_np
 
+    edit_key = k_star_np  # the EDIT itself still uses the real, un-decimated k_star for its own key
     if cov_mode == "standard":
         C = standard_covariance(peer_keys)
     elif cov_mode == "ours":
         C = resonance_covariance(peer_keys, k_target_np[None, :], RATE_BUDGET)
     else:
+        # FIX (same substitution caught in resonance_rome/gpt2_edit.py: a
+        # made-up ridge penalty `1e4*(I-P)` and a hardcoded `1e-2` cutoff
+        # stood in for AlphaEdit's real mechanism). Real fix: project the
+        # edit's own (un-decimated) key through P, regularize with M itself
+        # (the same matrix P came from), self-calibrate the cutoff.
         M = (standard_covariance(peer_keys) if cov_mode == "null_generic"
              else resonance_covariance(peer_keys, k_target_np[None, :], RATE_BUDGET))
-        P = null_space_projection(M, eigenvalue_threshold_frac=1e-2)
-        C = 1e4 * (np.eye(d) - P)
+        P = null_space_projection(M, eigenvalue_threshold_frac=None)
+        edit_key = P @ k_star_np
+        C = M
 
     C_reg = C + RIDGE * np.eye(d)
     C_inv = np.linalg.inv(C_reg)
-    Cinv_k = C_inv @ k_star_np  # the EDIT itself still uses the real, un-decimated k_star for its own key
-    denom = float(k_star_np @ Cinv_k)
+    Cinv_k = C_inv @ edit_key
+    denom = float(edit_key @ Cinv_k)
     delta_out = v_star.cpu().double().numpy() - v_orig.cpu().double().numpy()
     Delta = np.outer(delta_out, Cinv_k) / denom
     with torch.no_grad():

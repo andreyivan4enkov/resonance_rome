@@ -1,5 +1,37 @@
 # Changelog
 
+## 1.0.2 — 2026-08-28
+
+- Caught, by direct challenge ("ты снова упустил больше половины..."), a
+  real chain of substitutions in the null-space hybrid mechanism, copy-pasted
+  across FOUR scripts (`resonance_rome/gpt2_edit.py`, `src/hierarchical_
+  aliasing_test.py`, `src/cluster_mechanism_diagnostic.py`, `src/asymmetric_
+  perspective_clusters.py`):
+  1. `null_space_projection`'s eigenvalue cutoff was a hardcoded `1e-2`
+     instead of using this project's own established self-calibration
+     principle (Рефлексия's `_dynamic_leakage_threshold_pct`) — fixed with a
+     new `self_calibrated_null_threshold` (real spectrum's own largest gap)
+  2. The edit was never actually projected into the null space — a made-up
+     ridge penalty (`1e4*(I-P)`) stood in for AlphaEdit's real mechanism —
+     fixed to genuinely project the edit's own key (`k* -> P k*`)
+  3. A second-order catch immediately after fixing (2): the regularizer had
+     been silently switched to a freshly-computed `standard_covariance`
+     instead of reusing `M` (the real matrix P was built from) — fixed to
+     `C = M`, matching AlphaEdit's own formula
+- **Retraction**: re-ran all four affected real experiments with the fix.
+  The small-scale test (N_PEERS=200) conclusion is unchanged (still
+  scarcity-limited). But the headline N_PEERS=2000 finding — resonance
+  null-space *inverting* the main trade-off (better PS, worse NS) — **does
+  not survive the fix** and is retracted: it was an artifact of the fake
+  penalty mechanism. The two cluster-energy diagnostics also both got
+  *tighter* nulls with the fix (0.0401→0.0014 and 0.0125→0.0002 max
+  per-cluster difference) — the fake mechanism had been injecting a small
+  spurious signal into what is, honestly, a clean null
+- All 9 unit tests still green after the fix; `resonance_rome/__init__.py`
+  now also exports `null_space_projection` and `self_calibrated_null_
+  threshold`
+
+
 ## 1.0.1 — 2026-08-28
 
 - Caught a real methodological substitution in the cluster-mechanism test:

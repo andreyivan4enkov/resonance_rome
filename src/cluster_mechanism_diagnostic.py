@@ -144,18 +144,24 @@ def compute_delta(model, tok, device, prompt, target_word, peer_K, cov_mode):
 
     k_star_np = k_star.cpu().double().numpy()
     d = peer_K.shape[1]
+    edit_key = k_star_np
     if cov_mode == "ridge_resonance":
         C = resonance_covariance(peer_K, k_star_np[None, :], RATE_BUDGET)
-        C_reg = C + RIDGE * np.eye(d)
     else:  # null_resonance
+        # FIX (same substitution caught in resonance_rome/gpt2_edit.py: a
+        # made-up ridge penalty `1e4*(I-P)` and a hardcoded `1e-2` cutoff
+        # stood in for AlphaEdit's real mechanism). Real fix: project the
+        # edit's own key through P (k*->P k*), regularize with M itself
+        # (the same matrix P came from), self-calibrate the cutoff.
         M = resonance_covariance(peer_K, k_star_np[None, :], RATE_BUDGET)
-        P = null_space_projection(M, eigenvalue_threshold_frac=1e-2)
-        C = 1e4 * (np.eye(d) - P)
-        C_reg = C + RIDGE * np.eye(d)
+        P = null_space_projection(M, eigenvalue_threshold_frac=None)
+        edit_key = P @ k_star_np
+        C = M
+    C_reg = C + RIDGE * np.eye(d)
 
     C_inv = np.linalg.inv(C_reg)
-    Cinv_k = C_inv @ k_star_np
-    denom = float(k_star_np @ Cinv_k)
+    Cinv_k = C_inv @ edit_key
+    denom = float(edit_key @ Cinv_k)
     delta_out = v_star.cpu().double().numpy() - v_orig.cpu().double().numpy()
     Delta = np.outer(delta_out, Cinv_k) / denom  # (768, 3072)
     return Delta

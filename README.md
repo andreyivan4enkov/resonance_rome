@@ -548,62 +548,64 @@ matters (content-aware), then get AlphaEdit's null-space guarantee for
 protecting it — combining this project's strength with AlphaEdit's, which no
 search turned up as already done.
 
-**Tried, honest small-scale null result, real cause diagnosed.** Implemented
-a disclosed, simplified null-space projection (`resonance_rome.core.
-null_space_projection`: real SVD + a heavy ridge-style penalty outside the
-null space, not AlphaEdit's exact multi-term closed form) and compared
-generic-corpus vs resonance-weighted null-space construction on 10 real
-COUNTERFACT cases (`results/null_space_hybrid_n10.txt`):
+**A second real substitution, caught by direct challenge, retracts the
+headline null-space finding below.** Everything in this subsection was
+originally computed with a *fake* null-space mechanism: `null_space_
+projection` used a hardcoded `eigenvalue_threshold_frac=1e-2`, and instead
+of AlphaEdit's real hard projection, the edit was regularized with an
+invented ridge-style penalty (`1e4 * (I - P)`) standing in for their actual
+formula — never disclosed as anything but "simplified," but still a
+substitution the project's own rules forbid. Caught live by direct
+challenge ("ты снова упустил больше половины... неизбежно заменяешь другой
+[метод] на классику или добавляешь константы"), across *four* separate
+scripts that had each copy-pasted the same two bugs. Real fix: the edit's
+own key is now genuinely projected through the null space (`k* -> P k*`,
+AlphaEdit's actual mechanism), the regularizer reuses the same real matrix
+P was built from instead of a fabricated penalty, and the eigenvalue cutoff
+self-calibrates from the real spectrum's own largest gap (reusing this
+project's own established Рефлексия self-calibration principle) instead of
+a fixed constant. All four null-space experiments below were rerun with the
+real fix — see `resonance_rome/gpt2_edit.py` and `resonance_rome/core.py`
+for the corrected code.
+
+**Small-scale test (N_PEERS=200, n=10), real fix, conclusion unchanged**
+(`results/null_space_hybrid_n10_fixed.txt`):
 
 | mode | ES | PS | NS |
 |---|---|---|---|
 | standard | 1.000 | 0.950 | 0.050 |
-| resonance (this project, no null space) | 1.000 | 0.900 | **0.090** |
-| null-space, generic corpus | 1.000 | 0.900 | 0.080 |
-| null-space, resonance-weighted (the hybrid) | 1.000 | 0.900 | 0.080 |
+| resonance (this project, no null space) | 1.000 | 0.900 | 0.090 |
+| null-space, generic corpus | 1.000 | 0.900 | 0.090 |
+| null-space, resonance-weighted (the hybrid) | 1.000 | 0.900 | 0.090 |
 
-The two null-space variants gave **identical** numbers — no advantage from
-the hybrid here, and neither beat plain resonance weighting. Real, diagnosed
-cause: AlphaEdit's own paper builds its null space from ~100,000 real
-preserved-knowledge keys; this test used only 200 real peer keys against a
-3072-dim key space, so ~93% of directions (2,872 of 3,072) are *exactly*
-zero from sample scarcity alone, regardless of any resonance weighting — the
-trivial rank deficiency swamps whatever real difference reweighting the
-other 200 directions would make. A test-scale limitation, not evidence
-against the hybrid idea; a fair test needs peer counts closer to AlphaEdit's
-own (thousands, not hundreds).
+With the real projection, both null-space variants are now **exactly
+identical to plain resonance weighting**, not just to each other — an even
+cleaner confirmation of the same diagnosed cause (200 real peer keys against
+a 3072-dim space leaves ~93% of directions exactly zero from sample
+scarcity alone; AlphaEdit itself uses ~100,000 preserved keys). Conclusion
+unchanged by the fix.
 
-**Re-tested at N_PEERS=2000, plus a new hierarchy hypothesis.** Asked
-directly whether every applicable project method had actually been used
-here, one had been missed: the layer-hierarchy idea that a lower layer acts
-as "working memory" for the layer above (long-term memory = a layer's own
-weights, fast memory = a real, decimated/aliased signal carried up from the
-layer below — principle 10, established earlier in this project). Two things
-tested together (`results/hierarchical_aliasing_test_n10_peers2000.txt`):
-peer count raised to 2000, and each peer's "effective key" built either
-*flat* (layer 4 alone, as everywhere else in this project) or
-*hierarchical* (layer 4's real key + a real, literally decimated —
-stride-subsampled, summed not averaged — contribution from layer 3):
+**Large-scale test (N_PEERS=2000, n=10) — the "inverted trade-off" finding
+does NOT survive the real fix**
+(`results/hierarchical_aliasing_test_fixed.txt`, vs. the retracted
+`results/hierarchical_aliasing_test_n10_peers2000.txt`):
 
-| config | ES | PS | NS |
-|---|---|---|---|
-| flat, null-space generic | 1.000 | 0.850 | 0.090 |
-| flat, null-space resonance | 1.000 | **1.000** | 0.030 |
-| hierarchical, null-space generic | 1.000 | 0.900 | 0.080 |
-| hierarchical, null-space resonance | 1.000 | **1.000** | 0.030 |
+| config | ES | PS | NS (fake penalty, retracted) | NS (real projection, current) |
+|---|---|---|---|---|
+| flat, null-space generic | 1.000 | 0.850 | 0.090 | 0.150 |
+| flat, null-space resonance | 1.000 | 0.850 | 0.030 | 0.150 |
+| hierarchical, null-space generic | 1.000 | 0.900 | 0.080 | 0.090 |
+| hierarchical, null-space resonance | 1.000 | 0.900 | 0.030 | 0.100 |
 
-**Scaling peers to 2000 confirms the earlier diagnosis was right**: generic
-and resonance null-space are no longer identical — a real difference now
-shows up. But the difference **inverts** the main result's pattern: here
-resonance null-space gives *better* PS (perfect, 1.000) at the cost of
-*worse* NS (0.030, worse than generic's 0.080-0.090) — the opposite trade-off
-direction from plain resonance-weighted covariance (main result: better NS,
-worse PS). Deciding *which subspace is off-limits* via resonance behaves
-differently from *reweighting the covariance inside the ridge inverse* via
-resonance, even though both use the same real topology+budget formula. The
-hierarchical (layer-below aliasing) construction moved only the
-generic-null-space PS (0.850→0.900) and nothing else at this small n=10 —
-a real but marginal, inconclusive signal, not yet tested at a larger sample.
+The previously reported result — resonance null-space giving *better* PS
+(1.000) at the cost of *worse* NS (0.030), an inverted trade-off from the
+main result — **was an artifact of the fake penalty mechanism, not a real
+phenomenon**. With the real projection, generic and resonance null-space
+are statistically indistinguishable at this scale too (PS identical, NS
+within one case of each other). This retracts the headline claim of the
+`0.11.0` changelog entry: the resonance-vs-null-space hybrid, tested honestly
+at the scale AlphaEdit itself recommends, still shows no detectable real
+divergence — a genuine negative result, kept rather than hidden.
 
 **Two follow-up hypotheses, tested directly, both honest nulls.** (1) A
 literal, cascading version of the layer-hierarchy idea (each layer sees an
@@ -617,41 +619,49 @@ scores lower, trivially) — caught and fixed before reporting. After the
 fix: margin over chance at the coarsest stride is tiny and inconsistent
 across layers (roughly ±0.01), correlation with depth is weak (r=0.145) —
 no clear evidence of cascading, frequency-lowering aliasing in this specific
-measurement. (2) The inverted ridge-vs-null-space trade-off was hypothesized
-to reflect real, distinct neuron clusters within the layer — reusing this
-project's own earlier-confirmed real spectral-clustering method
-(`src/cluster_mechanism_diagnostic.py`,
-`results/cluster_mechanism_diagnostic.txt`): real per-cluster Delta energy
-(6 clusters, layer 4, n=5 real cases) came out broadly similar between the
-two mechanisms (differences of 0.004-0.040), with the largest difference on
-one of two very small (8-neuron) clusters — weak, inconclusive. Both nulls
-kept honestly rather than reframed as support.
+measurement. (2) The (now-retracted) inverted ridge-vs-null-space trade-off
+was hypothesized to reflect real, distinct neuron clusters within the
+layer — reusing this project's own earlier-confirmed real spectral-clustering
+method (`src/cluster_mechanism_diagnostic.py`,
+`results/cluster_mechanism_diagnostic_fixed.txt`, superseding the retracted
+`results/cluster_mechanism_diagnostic.txt`): with the real null-space fix,
+real per-cluster Delta energy (6 clusters, layer 4, n=5 real cases) came out
+almost exactly identical between the two mechanisms — max difference 0.0014
+(down from 0.0401 with the fake mechanism). The fix didn't just fail to
+strengthen the earlier "weak, inconclusive" signal — it erased it: the
+apparent per-cluster difference was itself downstream of the same fake
+penalty bug, not a real effect. Both nulls kept honestly rather than
+reframed as support.
 
-**A real methodological substitution caught in the cluster test, fixed, still
-a null.** The cluster test above used `sklearn.SpectralClustering`: a
-symmetric affinity matrix, one externally-imposed global cut — exactly the
-kind of standard method this project exists to avoid defaulting to, and
-inconsistent with this project's own asymmetric logic (topology+budget
-transfer is not symmetric; a Markov-Interface-style boundary should emerge
-from each node's own declared perspective, not one global partition).
-Redesigned using an already-established mechanic instead
-(`src/asymmetric_perspective_clusters.py`): each real neuron follows its own
-real attractor (`argmax_j topo_ij * budget_final_j`, its own row — the same
-"gravitational center" logic used elsewhere in this project) to a real fixed
-point; clusters are the real, self-organized attractor basins that emerge,
-not a k-way partition chosen in advance.
+**A real methodological substitution caught in the cluster test, fixed,
+still a null (independent of the fix above).** The cluster test above used
+`sklearn.SpectralClustering`: a symmetric affinity matrix, one
+externally-imposed global cut — exactly the kind of standard method this
+project exists to avoid defaulting to, and inconsistent with this project's
+own asymmetric logic (topology+budget transfer is not symmetric; a
+Markov-Interface-style boundary should emerge from each node's own declared
+perspective, not one global partition). Redesigned using an
+already-established mechanic instead (`src/asymmetric_perspective_
+clusters.py`): each real neuron follows its own real attractor
+(`argmax_j topo_ij * budget_final_j`, its own row — the same "gravitational
+center" logic used elsewhere in this project) to a real fixed point;
+clusters are the real, self-organized attractor basins that emerge, not a
+k-way partition chosen in advance.
 
-Real result: 400 neurons self-organized into 48 real clusters (sizes 1-54,
-`results/asymmetric_perspective_clusters.txt`) — a much more natural
-structure than the imposed k=6. But the ridge-vs-null-space cluster-energy
-difference remained small even among non-trivial (≥5-neuron) clusters
-(0.0002-0.0125, if anything smaller than the earlier symmetric-clustering
-run). The real methodological fix did not surface a stronger signal —
-consistent with, not contradicting, this project's closing diagnosis
-(`docs/JOURNEY.md`): even an asymmetric, self-organized analysis doesn't
-cleanly separate these two mechanisms into distinct real clusters in a
-classic architecture built on superposition, not designed to keep them
-distinct.
+Real result: 400 neurons self-organized into 48 real clusters (sizes 1-54).
+With the real null-space fix applied here too
+(`results/asymmetric_perspective_clusters_fixed.txt`, superseding the
+retracted `results/asymmetric_perspective_clusters.txt`), the
+ridge-vs-null-space cluster-energy difference among non-trivial (≥5-neuron)
+clusters dropped to 0.0000-0.0002 (down from 0.0000-0.0125 with the fake
+mechanism) — an order of magnitude tighter, and now consistent with true
+noise rather than a real signal. Both the spectral and the asymmetric
+self-organized clustering agree, with the real fix applied: ridge-resonance
+and null-space-resonance concentrate their weight-update energy
+**identically** across every real cluster structure tested — no evidence of
+distinct neuron populations for the two mechanisms, in a classic
+architecture built on superposition, not designed to keep them distinct
+(`docs/JOURNEY.md`).
 
 ## Attribution
 

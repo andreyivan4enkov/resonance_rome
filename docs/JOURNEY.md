@@ -196,6 +196,44 @@ process (smooth, symmetric, *inductive*) rather than this project's
 discrete, asymmetric decimation/aliasing model (*deductive*) -- which would
 itself explain why the cascading-aliasing test found so little signal.
 
+## A fourth bug, found by direct challenge after "fixing" a third: the null-space hybrid's headline finding retracted
+
+Packaging the null-space hybrid honestly into the README ("polish", not new
+science) surfaced a substitution: `null_space_projection` used a hardcoded
+`eigenvalue_threshold_frac=1e-2` instead of this project's own established
+self-calibration principle. Fixing that led to inspecting the rest of the
+mechanism, which surfaced a second, bigger one: the null-space "edit" never
+actually projected anything — it added a made-up ridge penalty
+(`1e4*(I-P)`) instead of AlphaEdit's real mechanism (project the edit's own
+key through P). Then, immediately after fixing *that*, a third: the
+regularizer had been switched to a fresh `standard_covariance` recomputation
+instead of reusing the real matrix P was built from — a fix quietly
+reverting to the classic method while fixing something else, the exact
+pattern this project's own rules warn against.
+
+All three fixes were copy-pasted into three other scripts that had each
+independently duplicated the same two bugs, and all four affected real
+experiments were rerun. The small-scale result (N_PEERS=200) held up
+unchanged. But the interesting one — the large-scale (N_PEERS=2000) finding
+that resonance null-space *inverts* the main trade-off (better PS, worse
+NS) — **did not survive**. With the real projection, generic and resonance
+null-space came out statistically indistinguishable, just like at small
+scale. The two cluster-energy diagnostics told the same story: their
+already-weak "signal" got an order of magnitude weaker under the real fix
+(0.0401→0.0014, 0.0125→0.0002 max per-cluster difference) — noise, not a
+real effect.
+
+The honest reading: this project's real, verified result (resonance-
+weighted covariance beats the generic baseline on specificity, at a
+predictable cost to generalization) never depended on the null-space
+hybrid — that was always a *proposed next step*, not part of the headline
+finding. What this catches instead is a recurring failure mode in how the
+next step was tested: a plausible-looking, disclosed "simplification" of
+someone else's real formula turned out to manufacture the exact kind of
+result (a clean, inverted trade-off) that would have been tempting to
+report as a positive finding, had it not been checked against the literal
+mechanism. See `CHANGELOG.md` 1.0.2 for the full technical accounting.
+
 ## Literature check (real search, not from memory)
 
 A live search found real, directly relevant prior work: ROME and MEMIT

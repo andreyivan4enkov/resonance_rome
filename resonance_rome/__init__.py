@@ -13,16 +13,26 @@ Public API:
     topology_and_budget(V, rate_budget=0.2) -> (topo, budget_final)
     standard_covariance(peer_keys) -> C
     resonance_covariance(peer_keys, target_keys, rate_budget=0.2) -> C
+    null_space_projection(M, eigenvalue_threshold_frac=None) -> P
+    self_calibrated_null_threshold(eigvals) -> float
     rome_edit(model, tok, layer, prompt, target_word, peer_keys, mode, ...) -> None
 """
 
-from .core import topology_and_budget, standard_covariance, resonance_covariance
+from .core import (
+    topology_and_budget,
+    standard_covariance,
+    resonance_covariance,
+    null_space_projection,
+    self_calibrated_null_threshold,
+)
 from .gpt2_edit import get_real_key, extract_peer_keys, rome_edit, joint_memit_edit
 
 __all__ = [
     "topology_and_budget",
     "standard_covariance",
     "resonance_covariance",
+    "null_space_projection",
+    "self_calibrated_null_threshold",
     "get_real_key",
     "extract_peer_keys",
     "rome_edit",
