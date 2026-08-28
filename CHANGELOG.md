@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.9.0 — 2026-08-28
+
+- Portfolio polish: explicit "what this repo demonstrates" (process, not
+  just numbers), a Mermaid mechanism diagram, and a real Related Work
+  comparison against AlphaEdit (ICLR 2025 Outstanding Paper), "Beyond the
+  Covariance Trap" (2026), and other real 2024-2026 work
+- Framed the PS (paraphrase) cost as a *predicted* consequence of deduction
+  (narrow, resonance-specific) vs induction (broad, frequency-based), not an
+  incidental weakness — a falsifiable prediction for future scale tests
+
+
 Mapped to the 2026-08-27/28 research session (§§8bb–8oo+). Full narrative:
 `docs/JOURNEY.md`. Iteration letters H–N were activation-steering / SAE dead
 ends; they stay in JOURNEY, not as release tags.

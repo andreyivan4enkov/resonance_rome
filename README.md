@@ -12,6 +12,20 @@ generalization) than the project's own hand-picked facts showed. Not
 benchmarked at the field's typical scale (hundreds-to-thousands of cases),
 not peer-reviewed. A draft, not a finished method.**
 
+## What this repository actually demonstrates
+
+The specific numbers below are a small pilot. The more durable thing this
+repository is evidence of is a **process**: state a literal hypothesis before
+writing code, test it against real models and real data (never simulated),
+audit your own result when challenged rather than defend it, fix what a
+self-audit finds even when it's your own foundational formula, and report
+the resulting trade-off honestly rather than the version that sounds best.
+`docs/JOURNEY.md` is the record of that process working three separate
+times against three real, independently-caught bugs in this project's own
+core formula — each one re-verified against real experiments, not assumed
+harmless. That discipline, not the specific perplexity numbers, is the
+transferable part.
+
 ## The idea
 
 [ROME](https://github.com/kmeng01/rome) (Meng et al., MIT/Northeastern/Technion,
@@ -26,7 +40,20 @@ This project replaces that generic corpus statistic with a **resonance-weighted
 covariance**: real cosine-similarity topology between the new fact's key vector
 and a set of real peer key vectors, combined with an asymmetric "weak/strong"
 budget-transfer rule (full definition in
-[`docs/METHODS.md`](docs/METHODS.md)). Instead of protecting "whatever is
+[`docs/METHODS.md`](docs/METHODS.md)).
+
+```mermaid
+flowchart LR
+    K["real key vector k*\n(the new fact)"] --> ROME["ROME/MEMIT\nclosed-form edit\nΔ = R·Kᵀ·(C+ridge)⁻¹"]
+    P["real peer keys\n(unrelated real text)"] --> STD["standard C\nmean(k·kᵀ)\ninductive: protect\nwhat's common"]
+    P --> RES["resonance C\ntopology + weak/strong\nbudget transfer\ndeductive: protect\nwhat resonates with k*"]
+    K -.weights.-> RES
+    STD --> ROME
+    RES -.this project's\nsubstitution.-> ROME
+    ROME --> OUT["edited model:\nnew fact learned,\nsome collateral cost"]
+```
+
+Instead of protecting "whatever is
 common," it protects "whatever actually resonates with the new fact" — a
 content-aware, *deductive* criterion instead of a generic, *inductive* one.
 
@@ -386,6 +413,20 @@ NS, worse PS than the generic baseline) is now confirmed across three real,
 independently-caught bugs and the field's own real benchmark, not just this
 project's own hand-picked facts.
 
+**Why worse PS is predicted, not just observed.** The standard covariance is
+*inductive*: it protects whatever key directions are statistically common
+across a large generic corpus, which is exactly the kind of broad,
+frequency-based generalization a paraphrase needs. The resonance covariance
+is *deductive*: it draws a narrow, specific conclusion from THIS fact's own
+real resonance with THIS set of peers — a conclusion that is not obligated to
+transfer to a reworded restatement of the same fact, especially at small
+scale (GPT-2-small, n=100 real cases), where the deductive mechanism has few
+resonant examples to smooth that narrowness out. Worse paraphrase
+generalization is the expected cost of deduction over induction, not an
+incidental weakness — a falsifiable prediction this project has not yet
+tested: does the PS gap shrink as scale (model size, edit count) grows and
+the deductive mechanism has more resonant structure to draw on?
+
 ## What this does NOT show
 
 - Not tested on models larger than GPT-2-small (124M params).
@@ -480,6 +521,32 @@ repo; point `HOTPOT_CORPUS_PATH` at any other real corpus file instead.
 python src/rome_resonance_edit.py                    # single-fact, all-layer sweep
 python src/reflection_autopoiesis_hybrid.py           # multi-fact self-calibration
 ```
+
+## Related work — an honest comparison, not a claim of novelty over everyone
+
+The core criticism this project makes of ROME/MEMIT's generic corpus
+covariance is not a solo insight — it's an active 2024-2026 research
+direction, checked live rather than assumed:
+
+| Approach | Mechanism | Strength of evidence |
+|---|---|---|
+| ROME/MEMIT (Meng et al. 2022) | Generic corpus covariance `C = E[kkᵀ]` | Real, published, widely used — but known to degrade under scale (see "Model Editing at Scale leads to Gradual and Catastrophic Forgetting", cited in `docs/JOURNEY.md`) |
+| **AlphaEdit** (Fang et al., [arXiv:2410.02355](https://arxiv.org/abs/2410.02355), ICLR 2025 Outstanding Paper) | Projects each edit into the **null space** of preserved knowledge | Real *mathematical guarantee* — preserved facts provably unchanged, not just empirically better. Tested at real scale: 3,000 sequential edits on LLaMA3/GPT2-XL/GPT-J |
+| **"Beyond the Covariance Trap"** ([arXiv:2603.15518](https://arxiv.org/pdf/2603.15518), 2026) | Argues generic covariance can't capture same-*subject* knowledge clustering; proposes subject-aware structure | Tested on Llama-3/Qwen2.5 across multiple benchmarks |
+| PMET, WilKE, BetaEdit, EvoEdit | Refined layer allocation, dynamic layer choice, null-space + sequential editing | Varying maturity, real published work |
+| **This project** | Content-aware **resonance** weighting (topology + asymmetric weak/strong budget transfer) of the same covariance term | Empirical, small-scale (GPT-2-small, n=100), with an honestly disclosed and theoretically predicted trade-off (see below) — no formal guarantee |
+
+**Honest positioning**: the intuition that generic covariance is the wrong
+"what to protect" criterion is validated by contemporaries working on this
+in 2025-2026 — this project is not reinventing a solved problem in a vacuum.
+But the *specific* mechanism (real topology + budget transfer) does not
+match any of the above literally; it appears to be a genuinely distinct
+angle, not a rediscovery. On rigor, AlphaEdit is a full step ahead — a
+mathematical guarantee beats an empirical, honestly-costed trade-off. A
+concrete, unexplored next step: use resonance to decide *which* subspace
+matters (content-aware), then get AlphaEdit's null-space guarantee for
+protecting it — combining this project's strength with AlphaEdit's, which no
+search turned up as already done.
 
 ## Attribution
 
