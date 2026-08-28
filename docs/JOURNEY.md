@@ -163,6 +163,39 @@ project (after a ROME-formula misread and a peer/fact-budget mix-up), and
 the third time the headline conclusion survived a real correction
 essentially untouched. COUNTERFACT has not yet been re-run with this fix.
 
+## Closing this phase: why the search moves to a new architecture, not more GPT-2 tests
+
+The last two direct hypothesis tests on GPT-2 (cascading aliasing across
+layers, real neuron clusters explaining the ridge-vs-null-space inversion)
+both came back weak/inconclusive. Discussing why, the real, published reason
+crystallized: **superposition**. GPT-2 was never designed to keep induction/
+deduction/reduction, or cross-layer aliasing, as clean, separated mechanisms
+-- whatever structure of this kind exists is smeared across many neurons and
+layers by ordinary superposition (more features than dimensions forces
+polysemantic, distributed encoding). A live search confirmed this is a real,
+*currently open* research question in the field, not something already
+answered: Anthropic's "Sparse Crosscoders for Cross-Layer Features and Model
+Diffing" (2024) explicitly targets *cross-layer* superposition -- features
+that persist across several layers rather than living in one -- and states
+plainly that "the existence of cross-layer superposition, along with
+effective methods for observing and quantifying it, remains an open
+question." Trying to detect these project's own hand-designed mechanics
+inside a network that was never built to keep them distinct is fighting
+superposition itself.
+
+The natural conclusion, reached together: stop searching for this logic
+*inside* an architecture that smears it, and instead **build a new
+architecture where it is explicit by construction** -- reusing the real,
+verified mechanics from this whole project (topology+budget resonance,
+hierarchical layer-memory aliasing, K≥S self-calibration) as first-class,
+undiluted components rather than emergent properties to go hunting for. That
+work continues as a separate project. A related open hypothesis for it,
+raised but not yet tested: cross-layer feature propagation in classical
+transformers might follow something closer to a real diffusion/heat-equation
+process (smooth, symmetric, *inductive*) rather than this project's
+discrete, asymmetric decimation/aliasing model (*deductive*) -- which would
+itself explain why the cascading-aliasing test found so little signal.
+
 ## Literature check (real search, not from memory)
 
 A live search found real, directly relevant prior work: ROME and MEMIT

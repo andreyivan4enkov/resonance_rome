@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.0 — 2026-08-28 (finalized for this research phase)
+
+- Final pass: all 9 unit tests green, all file references in README/docs
+  verified to exist, working tree clean and pushed
+- This closes the resonance-weighted-covariance line of investigation as a
+  standalone result. Follow-on work (embedding this logic into a purpose-
+  built architecture rather than searching for it inside GPT-2) continues
+  in a separate project — see `docs/JOURNEY.md` for the closing rationale
+
+
 ## 0.12.0 — 2026-08-28
 
 - Two direct, real follow-up tests, both honest nulls: (1) cascading/
