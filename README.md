@@ -605,6 +605,28 @@ hierarchical (layer-below aliasing) construction moved only the
 generic-null-space PS (0.850→0.900) and nothing else at this small n=10 —
 a real but marginal, inconclusive signal, not yet tested at a larger sample.
 
+**Two follow-up hypotheses, tested directly, both honest nulls.** (1) A
+literal, cascading version of the layer-hierarchy idea (each layer sees an
+increasingly decimated/coarser real signal from the one below) was tested
+directly on real activations across all 12 layers — real cosine similarity
+on retained (stride-subsampled) coordinates vs a real shuffled-pairing
+control, strides 1-64 (`src/cascading_aliasing_diagnostic.py`,
+`results/cascading_aliasing_diagnostic.txt`). An early version had a real
+confound (comparing a zero-padded decimated vector to a full one always
+scores lower, trivially) — caught and fixed before reporting. After the
+fix: margin over chance at the coarsest stride is tiny and inconsistent
+across layers (roughly ±0.01), correlation with depth is weak (r=0.145) —
+no clear evidence of cascading, frequency-lowering aliasing in this specific
+measurement. (2) The inverted ridge-vs-null-space trade-off was hypothesized
+to reflect real, distinct neuron clusters within the layer — reusing this
+project's own earlier-confirmed real spectral-clustering method
+(`src/cluster_mechanism_diagnostic.py`,
+`results/cluster_mechanism_diagnostic.txt`): real per-cluster Delta energy
+(6 clusters, layer 4, n=5 real cases) came out broadly similar between the
+two mechanisms (differences of 0.004-0.040), with the largest difference on
+one of two very small (8-neuron) clusters — weak, inconclusive. Both nulls
+kept honestly rather than reframed as support.
+
 ## Attribution
 
 Built on real, published prior work: ROME (Meng, Bau, Andonian, Belinkov,

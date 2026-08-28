@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.12.0 — 2026-08-28
+
+- Two direct, real follow-up tests, both honest nulls: (1) cascading/
+  frequency-lowering aliasing across all 12 real layer pairs (caught and
+  fixed a real confound mid-test before reporting) — weak signal, r=0.145
+  vs depth; (2) real spectral-clustering-based test of whether ridge vs
+  null-space resonance hit different real neuron clusters — broadly similar
+  profiles, inconclusive
+
+
 ## 0.11.0 — 2026-08-28
 
 - Scaled the null-space hybrid test to N_PEERS=2000 (from 200) — confirmed

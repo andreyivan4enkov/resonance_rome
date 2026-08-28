@@ -1,0 +1,22 @@
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 9888.76it/s]
+real spectral clustering: 400 neurons of layer 4, 6 clusters
+cluster sizes: [144, 42, 155, 43, 8, 8]
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12143.61it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12236.25it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13349.33it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10956.98it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12075.34it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12564.91it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12391.35it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11732.10it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12178.15it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13520.58it/s]
+mode             | clus0 clus1 clus2 clus3 clus4 clus5
+ridge_resonance  | 0.191 0.159 0.180 0.182 0.126 0.162
+null_resonance   | 0.179 0.138 0.185 0.174 0.166 0.158
+
+real per-cluster difference (ridge - null): +0.012 +0.020 -0.005 +0.009 -0.040 +0.004
+max |difference| across clusters: 0.0401 (cluster 4)
+
+[exited with code 0]
