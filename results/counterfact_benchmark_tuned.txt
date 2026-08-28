@@ -1,0 +1,122 @@
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11446.96it/s]
+  layer= 6 ridge=   100.0: ES=1.000 PS=1.000 NS=0.000
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11711.73it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12107.13it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11968.48it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12266.71it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10754.44it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10693.30it/s]
+  layer= 6 ridge= 10000.0: ES=1.000 PS=1.000 NS=0.000
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10294.48it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12565.93it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11787.57it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12076.98it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 9757.88it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10962.60it/s]
+  layer= 9 ridge=     1.0: ES=1.000 PS=1.000 NS=0.000
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11989.05it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12416.38it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12124.40it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12050.96it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11732.54it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11678.46it/s]
+  layer= 9 ridge=   100.0: ES=1.000 PS=1.000 NS=0.000
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11551.55it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11802.14it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11713.72it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11748.31it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11073.67it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12573.57it/s]
+  layer= 9 ridge= 10000.0: ES=1.000 PS=1.000 NS=0.000
+  -> chosen: layer=4 ridge=1.0
+
+
+real COUNTERFACT: 20 cases (seed=0), layer=4, ridge=1.0
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12434.54it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12227.81it/s]
+case  0 [standard] subj-prompt='Lyubov Orlova died in the city of'        ES=True  PS=0.50 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12694.94it/s]
+case  0 [ours    ] subj-prompt='Lyubov Orlova died in the city of'        ES=True  PS=0.50 NS=0.60
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11413.91it/s]
+case  1 [standard] subj-prompt='Kim Vilfort, who plays the position'      ES=True  PS=0.50 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11490.18it/s]
+case  1 [ours    ] subj-prompt='Kim Vilfort, who plays the position'      ES=True  PS=0.50 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11352.96it/s]
+case  2 [standard] subj-prompt='Johanne Luise Heiberg speaks the languag' ES=True  PS=0.50 NS=0.70
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10776.84it/s]
+case  2 [ours    ] subj-prompt='Johanne Luise Heiberg speaks the languag' ES=True  PS=0.50 NS=0.80
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10418.88it/s]
+case  3 [standard] subj-prompt='Citizen James performs'                   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12217.70it/s]
+case  3 [ours    ] subj-prompt='Citizen James performs'                   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11169.72it/s]
+case  4 [standard] subj-prompt='The language used by Alexandra Pascalido' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12054.00it/s]
+case  4 [ours    ] subj-prompt='The language used by Alexandra Pascalido' ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11748.97it/s]
+case  5 [standard] subj-prompt='Alexander William Kinglake speaks the la' ES=True  PS=0.50 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11637.52it/s]
+case  5 [ours    ] subj-prompt='Alexander William Kinglake speaks the la' ES=True  PS=0.00 NS=0.60
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11994.15it/s]
+case  6 [standard] subj-prompt='Bernard Musson, speaker of'               ES=True  PS=1.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11980.26it/s]
+case  6 [ours    ] subj-prompt='Bernard Musson, speaker of'               ES=True  PS=0.50 NS=0.50
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12606.25it/s]
+case  7 [standard] subj-prompt='Lucien, Lord of Monaco lost their life a' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10774.97it/s]
+case  7 [ours    ] subj-prompt='Lucien, Lord of Monaco lost their life a' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11607.06it/s]
+case  8 [standard] subj-prompt='Miles Smiles, who plays'                  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11017.07it/s]
+case  8 [ours    ] subj-prompt='Miles Smiles, who plays'                  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10635.41it/s]
+case  9 [standard] subj-prompt='Microsoft Internet Explorer 3 is develop' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12252.91it/s]
+case  9 [ours    ] subj-prompt='Microsoft Internet Explorer 3 is develop' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11523.88it/s]
+case 10 [standard] subj-prompt='Buenos Aires is a twin city of'           ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11232.98it/s]
+case 10 [ours    ] subj-prompt='Buenos Aires is a twin city of'           ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11530.30it/s]
+case 11 [standard] subj-prompt='The Cat Empire plays'                     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11557.78it/s]
+case 11 [ours    ] subj-prompt='The Cat Empire plays'                     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12258.48it/s]
+case 12 [standard] subj-prompt='Jehuda Cresques speaks the language'      ES=True  PS=0.50 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10715.45it/s]
+case 12 [ours    ] subj-prompt='Jehuda Cresques speaks the language'      ES=True  PS=0.50 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11957.87it/s]
+case 13 [standard] subj-prompt='William Johnson Cory speaks'              ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12223.96it/s]
+case 13 [ours    ] subj-prompt='William Johnson Cory speaks'              ES=True  PS=1.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11860.77it/s]
+case 14 [standard] subj-prompt='Tim Davie, of'                            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12124.63it/s]
+case 14 [ours    ] subj-prompt='Tim Davie, of'                            ES=True  PS=0.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11367.30it/s]
+case 15 [standard] subj-prompt='Jack Sheldon, playing the'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11638.83it/s]
+case 15 [ours    ] subj-prompt='Jack Sheldon, playing the'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11901.70it/s]
+case 16 [standard] subj-prompt='Jussi Markkanen plays as'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10514.00it/s]
+case 16 [ours    ] subj-prompt='Jussi Markkanen plays as'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11370.22it/s]
+case 17 [standard] subj-prompt='Deion Sanders, the'                       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10176.18it/s]
+case 17 [ours    ] subj-prompt='Deion Sanders, the'                       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10828.16it/s]
+case 18 [standard] subj-prompt='Alfred Hitchcock Presents was released o' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12540.80it/s]
+case 18 [ours    ] subj-prompt='Alfred Hitchcock Presents was released o' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11698.05it/s]
+case 19 [standard] subj-prompt='Levski Ridge is located in the continent' ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11068.15it/s]
+case 19 [ours    ] subj-prompt='Levski Ridge is located in the continent' ES=True  PS=0.50 NS=0.60
+
+=== COUNTERFACT SUMMARY (real, n=20, layer=4, ridge=1.0) ===
+standard  : ES=1.000  PS=0.875  NS=0.135
+ours      : ES=1.000  PS=0.750  NS=0.205
+
+[exited with code 0]

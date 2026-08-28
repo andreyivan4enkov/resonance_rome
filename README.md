@@ -5,9 +5,12 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/andreyivan4enkov/resonance_rome)](https://github.com/andreyivan4enkov/resonance_rome/releases)
 
-**Status: real, reproducible pilot result on GPT-2-small. Not benchmarked at
-scale, not peer-reviewed, not tested on standard editing benchmarks
-(COUNTERFACT/zsRE). A draft, not a finished method.**
+**Status: real, reproducible pilot result on GPT-2-small, now also tested on
+a small (n=20) real sample of the field's own COUNTERFACT benchmark — see
+below for a more nuanced, honest trade-off (better specificity, worse
+paraphrase generalization) than the project's own hand-picked facts showed.
+Not benchmarked at full scale, not peer-reviewed. A draft, not a finished
+method.**
 
 ## The idea
 
@@ -272,10 +275,61 @@ edits). This looks like a property of the one-shot joint-solve mechanism
 itself, not a flaw specific to either covariance choice — standard and
 resonance C hit the identical ceiling in `results/memit_scaling_curve.txt`.
 
+## Real benchmark: COUNTERFACT (Meng et al. 2022's own dataset)
+
+Everything above used hand-picked, simple, single-token facts. Tested on the
+field's real standard benchmark instead — the actual COUNTERFACT dataset
+(21,919 real cases, downloaded live from `rome.baulab.info`), using its own
+real metrics: **ES** (Efficacy — did the exact edited fact take?), **PS**
+(Paraphrase — does it generalize to reworded prompts?), **NS** (Neighborhood
+— are OTHER, unrelated subjects sharing the same relation left alone?).
+
+**First pass (same LAYER=9 that worked well on our own hand-picked facts,
+n=20 real random COUNTERFACT cases):**
+
+| | ES | PS | NS |
+|---|---|---|---|
+| standard | 1.000 | 1.000 | 0.005 |
+| resonance | 1.000 | 0.975 | 0.065 |
+
+**Honest, sobering finding**: NS is catastrophic for BOTH — over 93-99% of
+unrelated neighboring facts get damaged by a "single" edit on this real,
+diverse dataset (vs. the clean 10-14/14 preservation seen throughout this
+project on our own simple facts). Resonance C is directionally ~13x better,
+but 13x better than near-zero is still near-zero. Layer 9 was chosen from
+OUR OWN simple-template experiments, never tuned for COUNTERFACT's real
+diversity of subjects and relations — the honest suspicion was that this,
+not the method itself, was the main culprit.
+
+**After a real RIDGE/layer sweep** (9 configs, 5 held-out cases, mode=standard
+only, picking the config with the best NS among those keeping ES≥0.6) —
+chosen: **layer=4, ridge=1.0** (full sweep table in
+`results/counterfact_benchmark_tuned.txt`). Re-ran the full n=20 standard-
+vs-resonance comparison at this tuned config:
+
+| | ES | PS | NS |
+|---|---|---|---|
+| standard | 1.000 | 0.875 | 0.135 |
+| resonance | 1.000 | 0.750 | **0.205** |
+
+**A more honest, more nuanced picture than anything above**: absolute NS
+improves substantially (0.005→0.135 / 0.065→0.205) once the layer is chosen
+properly for this real, diverse dataset — confirming layer choice, not the
+method, was the dominant factor in the catastrophic first pass. Resonance C
+still wins on NS (~1.5x better specificity/locality) at this tuned
+config — but now **at a real, disclosed cost on PS** (0.750 vs 0.875,
+resonance generalizes worse to paraphrases here). This is a genuine
+specificity/generalization trade-off that the project's own simple hand-
+picked facts (where resonance won on essentially every axis) did not reveal.
+Sample size (n=20) is small for this benchmark; the field's own papers
+typically evaluate on hundreds to thousands of cases.
+
 ## What this does NOT show
 
 - Not tested on models larger than GPT-2-small (124M params).
-- Not tested on the field's standard editing benchmarks (COUNTERFACT, zsRE).
+- Tested on COUNTERFACT only at n=20 (small sample; the field's own papers
+  use hundreds to thousands of cases) and not at all on zsRE or other
+  standard editing benchmarks.
 - Joint multi-fact edits were tested up to N=50 at one layer, not thousands
   (MEMIT's published scale).
 - n=6 facts is still a small sample for the *layer-split* hybrid rule; the
