@@ -548,6 +548,31 @@ matters (content-aware), then get AlphaEdit's null-space guarantee for
 protecting it — combining this project's strength with AlphaEdit's, which no
 search turned up as already done.
 
+**Tried, honest small-scale null result, real cause diagnosed.** Implemented
+a disclosed, simplified null-space projection (`resonance_rome.core.
+null_space_projection`: real SVD + a heavy ridge-style penalty outside the
+null space, not AlphaEdit's exact multi-term closed form) and compared
+generic-corpus vs resonance-weighted null-space construction on 10 real
+COUNTERFACT cases (`results/null_space_hybrid_n10.txt`):
+
+| mode | ES | PS | NS |
+|---|---|---|---|
+| standard | 1.000 | 0.950 | 0.050 |
+| resonance (this project, no null space) | 1.000 | 0.900 | **0.090** |
+| null-space, generic corpus | 1.000 | 0.900 | 0.080 |
+| null-space, resonance-weighted (the hybrid) | 1.000 | 0.900 | 0.080 |
+
+The two null-space variants gave **identical** numbers — no advantage from
+the hybrid here, and neither beat plain resonance weighting. Real, diagnosed
+cause: AlphaEdit's own paper builds its null space from ~100,000 real
+preserved-knowledge keys; this test used only 200 real peer keys against a
+3072-dim key space, so ~93% of directions (2,872 of 3,072) are *exactly*
+zero from sample scarcity alone, regardless of any resonance weighting — the
+trivial rank deficiency swamps whatever real difference reweighting the
+other 200 directions would make. A test-scale limitation, not evidence
+against the hybrid idea; a fair test needs peer counts closer to AlphaEdit's
+own (thousands, not hundreds) and has not yet been run.
+
 ## Attribution
 
 Built on real, published prior work: ROME (Meng, Bau, Andonian, Belinkov,

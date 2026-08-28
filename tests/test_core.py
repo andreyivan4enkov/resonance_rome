@@ -4,7 +4,12 @@ Run with: pytest tests/test_core.py
 import numpy as np
 import pytest
 
-from resonance_rome.core import resonance_covariance, standard_covariance, topology_and_budget
+from resonance_rome.core import (
+    null_space_projection,
+    resonance_covariance,
+    standard_covariance,
+    topology_and_budget,
+)
 
 
 def _random_vectors(n, d, seed):
@@ -87,6 +92,30 @@ def test_resonance_covariance_zero_when_no_real_similarity():
     target = np.array([[0.0, 1.0, 0.0, 0.0]])
     C = resonance_covariance(peer_orthogonal, target)
     assert np.allclose(C, 0.0), "an exactly orthogonal peer must contribute zero weight"
+
+
+def test_null_space_projection_is_idempotent_and_symmetric():
+    """A real orthogonal projection matrix must satisfy P^2 == P and P == P^T --
+    basic sanity that null_space_projection returns a genuine projector."""
+    V = _random_vectors(10, 6, seed=5)
+    M = standard_covariance(V)
+    P = null_space_projection(M, eigenvalue_threshold_frac=0.5)
+    assert np.allclose(P @ P, P, atol=1e-8), "a projection matrix must be idempotent: P@P == P"
+    assert np.allclose(P, P.T, atol=1e-8), "a projection matrix built from real symmetric eigenvectors must be symmetric"
+
+
+def test_null_space_projection_kills_the_dominant_direction():
+    """M's top eigenvector (its most heavily 'occupied' real direction) must
+    NOT be in the null space -- projecting it through P should collapse it
+    close to zero, since P projects onto directions M does NOT occupy."""
+    V = _random_vectors(15, 8, seed=6)
+    M = standard_covariance(V)
+    eigvals, eigvecs = np.linalg.eigh(M)
+    top_direction = eigvecs[:, -1]  # largest eigenvalue
+    P = null_space_projection(M, eigenvalue_threshold_frac=0.1)
+    projected = P @ top_direction
+    assert np.linalg.norm(projected) < np.linalg.norm(top_direction) * 0.5, \
+        "M's most heavily-occupied direction must be strongly suppressed by its own null-space projection"
 
 
 if __name__ == "__main__":

@@ -57,6 +57,32 @@ def standard_covariance(peer_keys: np.ndarray) -> np.ndarray:
     return (peer_keys.T @ peer_keys) / peer_keys.shape[0]
 
 
+def null_space_projection(M: np.ndarray, eigenvalue_threshold_frac: float = 1e-2) -> np.ndarray:
+    """AlphaEdit-STYLE null-space projection (Fang et al. 2024, arXiv:2410.02355,
+    Eq. 8-9) -- a simplified, disclosed re-implementation, not a literal
+    reproduction of their exact multi-term closed form (not verified against
+    the paper's own equations directly, only a secondary extraction of them).
+
+    Real SVD of a real second-moment matrix M (M = K0 K0^T in AlphaEdit's own
+    notation, built from real "preserved knowledge" keys): eigenvectors with
+    eigenvalues below `eigenvalue_threshold_frac * max_eigenvalue` are treated
+    as the (approximate) null space -- directions M has near-zero real
+    presence in. P = U_hat U_hat^T projects any vector/matrix onto that null
+    space; an edit constrained to move only within P's range cannot disturb
+    what M represents, by construction.
+
+    This project's hybrid: build M from `resonance_covariance` (below)
+    instead of a generic corpus second moment -- so what counts as "already
+    occupied, must be preserved" is decided by REAL resonance to the fact
+    being edited, not by generic frequency alone.
+    """
+    eigvals, eigvecs = np.linalg.eigh(M)  # M is symmetric PSD by construction
+    threshold = eigenvalue_threshold_frac * eigvals.max()
+    null_mask = eigvals < threshold
+    U_hat = eigvecs[:, null_mask]
+    return U_hat @ U_hat.T
+
+
 def resonance_covariance(peer_keys: np.ndarray, target_keys: np.ndarray,
                           rate_budget: float = DEFAULT_RATE_BUDGET) -> np.ndarray:
     """This project's substitution: C = sum_j [ w_j * k_j k_j^T ], where w_j

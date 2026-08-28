@@ -9,7 +9,7 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from .core import resonance_covariance, standard_covariance
+from .core import null_space_projection, resonance_covariance, standard_covariance
 
 DEFAULT_RIDGE = 1.0
 DEFAULT_V_STAR_STEPS = 30
@@ -72,10 +72,19 @@ def _find_v_star(model, tok, device, layer, prompt, target_word,
 def rome_edit(model, tok, device, layer: int, prompt: str, target_word: str,
               peer_keys: np.ndarray, mode: str = "ours",
               ridge: float = DEFAULT_RIDGE, rate_budget: float = 0.2,
-              v_star_steps: int = DEFAULT_V_STAR_STEPS, v_star_lr: float = DEFAULT_V_STAR_LR) -> None:
+              v_star_steps: int = DEFAULT_V_STAR_STEPS, v_star_lr: float = DEFAULT_V_STAR_LR,
+              null_space_penalty: float = 1e4, null_space_eigenvalue_frac: float = 1e-2) -> None:
     """Real, single-fact ROME closed-form edit, applied in place to `model`.
 
-    mode: "standard" (real ROME baseline covariance) or "ours" (resonance).
+    mode:
+      "standard"      -- real ROME baseline covariance (generic corpus)
+      "ours"          -- resonance-weighted covariance (this project's main result)
+      "null_generic"  -- AlphaEdit-style null-space projection (Fang et al. 2024),
+                         null space built from the GENERIC peer covariance
+      "null_resonance" -- this project's hybrid: null space built from the
+                         RESONANCE-weighted covariance instead -- resonant
+                         peers occupy more of the "preserved" subspace and are
+                         thereby MORE strongly protected from the edit
     """
     c_proj = model.transformer.h[layer].mlp.c_proj
     k_star, v_orig, v_star = _find_v_star(model, tok, device, layer, prompt, target_word,
@@ -85,8 +94,19 @@ def rome_edit(model, tok, device, layer: int, prompt: str, target_word: str,
 
     if mode == "standard":
         C = standard_covariance(peer_keys)
-    else:
+    elif mode == "ours":
         C = resonance_covariance(peer_keys, k_star_np[None, :], rate_budget)
+    elif mode in ("null_generic", "null_resonance"):
+        M = (standard_covariance(peer_keys) if mode == "null_generic"
+             else resonance_covariance(peer_keys, k_star_np[None, :], rate_budget))
+        P = null_space_projection(M, null_space_eigenvalue_frac)
+        # Heavily penalize movement OUTSIDE the null space (the "preserved"
+        # subspace M represents) instead of AlphaEdit's own exact multi-term
+        # closed form -- a disclosed, simplified way to approximate the same
+        # hard constraint (edit confined to P's range) via ridge-style penalty.
+        C = null_space_penalty * (np.eye(d) - P)
+    else:
+        raise ValueError(f"unknown mode: {mode}")
 
     C_reg = C + ridge * np.eye(d)
     C_inv = np.linalg.inv(C_reg)

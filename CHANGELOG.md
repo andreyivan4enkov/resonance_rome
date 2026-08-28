@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.10.0 — 2026-08-28
+
+- Implemented and tested the proposed hybrid: resonance-weighted null-space
+  projection (`resonance_rome.core.null_space_projection`), inspired by
+  AlphaEdit (Fang et al. 2024) — a disclosed, simplified re-implementation
+  (SVD + ridge-style penalty), not their exact multi-term closed form
+- Real test on 10 COUNTERFACT cases: generic and resonance-weighted null
+  space gave IDENTICAL results, and neither beat plain resonance weighting
+- Real cause diagnosed: 200 real peer keys against a 3072-dim space leaves
+  ~93% of directions exactly zero from sample scarcity alone (AlphaEdit
+  itself uses ~100,000 preserved keys) — a test-scale limitation, not
+  evidence against the hybrid idea
+
+
 ## 0.9.0 — 2026-08-28
 
 - Portfolio polish: explicit "what this repo demonstrates" (process, not

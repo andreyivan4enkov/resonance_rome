@@ -1,0 +1,82 @@
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12616.76it/s]
+case  0 [null_resonance ] 'Virginia State Route 33 is located ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13924.56it/s]
+case  1 [standard       ] 'Verkehrsverbund Berlin-Brandenburg ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11680.00it/s]
+case  1 [ours           ] 'Verkehrsverbund Berlin-Brandenburg ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12311.97it/s]
+case  1 [null_generic   ] 'Verkehrsverbund Berlin-Brandenburg ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13181.79it/s]
+case  1 [null_resonance ] 'Verkehrsverbund Berlin-Brandenburg ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12334.47it/s]
+case  2 [standard       ] 'Charles, Prince of Viana died in'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11983.49it/s]
+case  2 [ours           ] 'Charles, Prince of Viana died in'    ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12747.07it/s]
+case  2 [null_generic   ] 'Charles, Prince of Viana died in'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12413.90it/s]
+case  2 [null_resonance ] 'Charles, Prince of Viana died in'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13008.59it/s]
+case  3 [standard       ] 'Boiling Points premiered on'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12600.11it/s]
+case  3 [ours           ] 'Boiling Points premiered on'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12415.64it/s]
+case  3 [null_generic   ] 'Boiling Points premiered on'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12051.19it/s]
+case  3 [null_resonance ] 'Boiling Points premiered on'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13030.44it/s]
+case  4 [standard       ] 'Lannick Gautry spoke the language'   ES=True  PS=0.50 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10854.67it/s]
+case  4 [ours           ] 'Lannick Gautry spoke the language'   ES=True  PS=0.00 NS=0.70
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12084.27it/s]
+case  4 [null_generic   ] 'Lannick Gautry spoke the language'   ES=True  PS=0.00 NS=0.70
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12983.29it/s]
+case  4 [null_resonance ] 'Lannick Gautry spoke the language'   ES=True  PS=0.00 NS=0.70
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12310.26it/s]
+case  5 [standard       ] 'Adobe Flash is created by'           ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11798.77it/s]
+case  5 [ours           ] 'Adobe Flash is created by'           ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12231.42it/s]
+case  5 [null_generic   ] 'Adobe Flash is created by'           ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11196.51it/s]
+case  5 [null_resonance ] 'Adobe Flash is created by'           ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12626.25it/s]
+case  6 [standard       ] 'Foo Fighters, that was started in'   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12405.46it/s]
+case  6 [ours           ] 'Foo Fighters, that was started in'   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12254.85it/s]
+case  6 [null_generic   ] 'Foo Fighters, that was started in'   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11742.75it/s]
+case  6 [null_resonance ] 'Foo Fighters, that was started in'   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12987.36it/s]
+case  7 [standard       ] 'Peter Gunn debuted on'               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12552.46it/s]
+case  7 [ours           ] 'Peter Gunn debuted on'               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11816.07it/s]
+case  7 [null_generic   ] 'Peter Gunn debuted on'               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13978.81it/s]
+case  7 [null_resonance ] 'Peter Gunn debuted on'               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12310.99it/s]
+case  8 [standard       ] 'The law in Wallonia declares the la' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11868.70it/s]
+case  8 [ours           ] 'The law in Wallonia declares the la' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12866.23it/s]
+case  8 [null_generic   ] 'The law in Wallonia declares the la' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12265.99it/s]
+case  8 [null_resonance ] 'The law in Wallonia declares the la' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12327.37it/s]
+case  9 [standard       ] 'The Fantastic Journey premieres on'  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11752.31it/s]
+case  9 [ours           ] 'The Fantastic Journey premieres on'  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11691.44it/s]
+case  9 [null_generic   ] 'The Fantastic Journey premieres on'  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12069.24it/s]
+case  9 [null_resonance ] 'The Fantastic Journey premieres on'  ES=True  PS=1.00 NS=0.00
+
+=== NULL-SPACE HYBRID SUMMARY (real, n=10, layer=4) ===
+standard       : ES=1.000  PS=0.950  NS=0.050
+ours           : ES=1.000  PS=0.900  NS=0.090
+null_generic   : ES=1.000  PS=0.900  NS=0.080
+null_resonance : ES=1.000  PS=0.900  NS=0.080
+
+[exited with code 0]
