@@ -1,0 +1,252 @@
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11892.12it/s]
+case 38 [ours    ] 'In Stavropol Krai, they understand'       ES=True  PS=0.00 NS=0.50
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11813.59it/s]
+case 39 [standard] 'Schleitheim, in'                          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12860.63it/s]
+case 39 [ours    ] 'Schleitheim, in'                          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11642.10it/s]
+case 40 [standard] 'Eugene Roshal spoke the language'         ES=True  PS=1.00 NS=0.80
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12346.74it/s]
+case 40 [ours    ] 'Eugene Roshal spoke the language'         ES=True  PS=1.00 NS=0.80
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12085.45it/s]
+case 41 [standard] 'Cathi Unsworth speaks'                    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12492.85it/s]
+case 41 [ours    ] 'Cathi Unsworth speaks'                    ES=True  PS=0.50 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12160.26it/s]
+case 42 [standard] 'Paul Citroen found employment in'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12738.18it/s]
+case 42 [ours    ] 'Paul Citroen found employment in'         ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11787.79it/s]
+case 43 [standard] 'Bashkim Kadrii plays'                     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11795.18it/s]
+case 43 [ours    ] 'Bashkim Kadrii plays'                     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11609.44it/s]
+case 44 [standard] 'What does Joe Wilder play? They play'     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11815.39it/s]
+case 44 [ours    ] 'What does Joe Wilder play? They play'     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11608.14it/s]
+case 45 [standard] "Herbert A. Hauptman's expertise is"       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12098.17it/s]
+case 45 [ours    ] "Herbert A. Hauptman's expertise is"       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12507.19it/s]
+case 46 [standard] 'Gordon Bell works for'                    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12345.27it/s]
+case 46 [ours    ] 'Gordon Bell works for'                    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12216.02it/s]
+case 47 [standard] 'The Denver Dry Goods Company is based in' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12283.95it/s]
+case 47 [ours    ] 'The Denver Dry Goods Company is based in' ES=True  PS=0.50 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12705.85it/s]
+case 48 [standard] 'The original language of Casa de Mi Padr' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12084.74it/s]
+case 48 [ours    ] 'The original language of Casa de Mi Padr' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12197.30it/s]
+case 49 [standard] 'Takashi Nakamura holds a citizenship fro' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12525.11it/s]
+case 49 [ours    ] 'Takashi Nakamura holds a citizenship fro' ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10669.96it/s]
+case 50 [standard] 'William Scoresby Archipelago is located ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12137.67it/s]
+case 50 [ours    ] 'William Scoresby Archipelago is located ' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10368.76it/s]
+case 51 [standard] 'Harrie Massey specializes in'             ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12200.89it/s]
+case 51 [ours    ] 'Harrie Massey specializes in'             ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12179.83it/s]
+case 52 [standard] 'The genre played by Wolter Wierbos is'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12865.96it/s]
+case 52 [ours    ] 'The genre played by Wolter Wierbos is'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12614.96it/s]
+case 53 [standard] 'The official language of Loimaa is'       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12241.55it/s]
+case 53 [ours    ] 'The official language of Loimaa is'       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12005.74it/s]
+case 54 [standard] 'Alice Furlong, a citizen of'              ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11967.32it/s]
+case 54 [ours    ] 'Alice Furlong, a citizen of'              ES=True  PS=0.50 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11750.53it/s]
+case 55 [standard] 'Conchita Montenegro works as'             ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11483.59it/s]
+case 55 [ours    ] 'Conchita Montenegro works as'             ES=True  PS=0.50 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11852.84it/s]
+case 56 [standard] 'Jean-Pierre Marielle is a native speaker' ES=True  PS=0.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12365.43it/s]
+case 56 [ours    ] 'Jean-Pierre Marielle is a native speaker' ES=True  PS=0.00 NS=0.70
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11804.83it/s]
+case 57 [standard] 'The twin city of Islamabad is'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12133.40it/s]
+case 57 [ours    ] 'The twin city of Islamabad is'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12150.98it/s]
+case 58 [standard] 'The language used by John Diefenbaker is' ES=True  PS=1.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11991.13it/s]
+case 58 [ours    ] 'The language used by John Diefenbaker is' ES=True  PS=0.50 NS=0.50
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12289.30it/s]
+case 59 [standard] 'Garfield Barwick died in the city of'     ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11188.04it/s]
+case 59 [ours    ] 'Garfield Barwick died in the city of'     ES=True  PS=1.00 NS=0.50
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11568.12it/s]
+case 60 [standard] 'Microsoft SQL Server is developed by'     ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12373.81it/s]
+case 60 [ours    ] 'Microsoft SQL Server is developed by'     ES=True  PS=0.50 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11184.61it/s]
+case 61 [standard] 'The native language of Claude Victor-Per' ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12512.23it/s]
+case 61 [ours    ] 'The native language of Claude Victor-Per' ES=False PS=0.00 NS=0.70
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12269.86it/s]
+case 62 [standard] 'The original language of Being Julia is'  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12238.66it/s]
+case 62 [ours    ] 'The original language of Being Julia is'  ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11490.39it/s]
+case 63 [standard] 'Victor Horta speaks'                      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13523.23it/s]
+case 63 [ours    ] 'Victor Horta speaks'                      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12294.65it/s]
+case 64 [standard] 'Teshie, in'                               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12191.55it/s]
+case 64 [ours    ] 'Teshie, in'                               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12626.51it/s]
+case 65 [standard] 'Delhi Technological University is locate' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12343.30it/s]
+case 65 [ours    ] 'Delhi Technological University is locate' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11602.72it/s]
+case 66 [standard] 'francium, which was named for'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12555.51it/s]
+case 66 [ours    ] 'francium, which was named for'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12014.34it/s]
+case 67 [standard] 'Bilohirsk Raion, in'                      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11648.66it/s]
+case 67 [ours    ] 'Bilohirsk Raion, in'                      ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13071.60it/s]
+case 68 [standard] 'Zhang Ziyi originated from'               ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12917.10it/s]
+case 68 [ours    ] 'Zhang Ziyi originated from'               ES=True  PS=0.50 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12307.82it/s]
+case 69 [standard] 'Rob & Big was released on'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11802.81it/s]
+case 69 [ours    ] 'Rob & Big was released on'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12119.90it/s]
+case 70 [standard] 'Mike Candys has a citizenship from'       ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11458.79it/s]
+case 70 [ours    ] 'Mike Candys has a citizenship from'       ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12248.08it/s]
+case 71 [standard] 'Kaloyan Nunatak is located in'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12706.11it/s]
+case 71 [ours    ] 'Kaloyan Nunatak is located in'            ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11798.32it/s]
+case 72 [standard] 'Income Property, that originated in'      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11701.14it/s]
+case 72 [ours    ] 'Income Property, that originated in'      ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12639.88it/s]
+case 73 [standard] 'Arvo Tuominen speaks the language'        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11689.90it/s]
+case 73 [ours    ] 'Arvo Tuominen speaks the language'        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 10736.58it/s]
+case 74 [standard] 'The Nutt House premieres on'              ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11825.07it/s]
+case 74 [ours    ] 'The Nutt House premieres on'              ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11322.52it/s]
+case 75 [standard] 'Google Calendar is a product of'          ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12519.55it/s]
+case 75 [ours    ] 'Google Calendar is a product of'          ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12680.16it/s]
+case 76 [standard] 'Cook da Books that was founded in'        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11905.58it/s]
+case 76 [ours    ] 'Cook da Books that was founded in'        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12766.21it/s]
+case 77 [standard] 'Dhwani was created in'                    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12866.50it/s]
+case 77 [ours    ] 'Dhwani was created in'                    ES=True  PS=0.50 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12068.77it/s]
+case 78 [standard] 'John Paul II has the position of'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12379.24it/s]
+case 78 [ours    ] 'John Paul II has the position of'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11793.17it/s]
+case 79 [standard] 'Which position does Curtis McElhinney pl' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11503.81it/s]
+case 79 [ours    ] 'Which position does Curtis McElhinney pl' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11818.31it/s]
+case 80 [standard] "James Craig Annan's occupation is"        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12061.73it/s]
+case 80 [ours    ] "James Craig Annan's occupation is"        ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12052.83it/s]
+case 81 [standard] 'Fort William Point is in'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11602.50it/s]
+case 81 [ours    ] 'Fort William Point is in'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12318.56it/s]
+case 82 [standard] 'Eldkvarn, in'                             ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11951.65it/s]
+case 82 [ours    ] 'Eldkvarn, in'                             ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12396.55it/s]
+case 83 [standard] 'Ali Campbell is native to'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12107.61it/s]
+case 83 [ours    ] 'Ali Campbell is native to'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12129.37it/s]
+case 84 [standard] 'Fiat Siena is created by'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12422.84it/s]
+case 84 [ours    ] 'Fiat Siena is created by'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12494.86it/s]
+case 85 [standard] 'Gautama Buddha follows the religion of'   ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11790.26it/s]
+case 85 [ours    ] 'Gautama Buddha follows the religion of'   ES=True  PS=0.50 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11760.77it/s]
+case 86 [standard] 'Damon Allen, who plays the position'      ES=True  PS=0.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12257.02it/s]
+case 86 [ours    ] 'Damon Allen, who plays the position'      ES=True  PS=0.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12377.27it/s]
+case 87 [standard] 'Microsoft XNA, a product of'              ES=True  PS=1.00 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12908.77it/s]
+case 87 [ours    ] 'Microsoft XNA, a product of'              ES=True  PS=0.50 NS=0.30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13161.67it/s]
+case 88 [standard] 'The mother tongue of Raymond Triboulet i' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11925.25it/s]
+case 88 [ours    ] 'The mother tongue of Raymond Triboulet i' ES=True  PS=0.00 NS=0.40
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11855.56it/s]
+case 89 [standard] "Johannes Hevelius's expertise is"         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12177.20it/s]
+case 89 [ours    ] "Johannes Hevelius's expertise is"         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12992.53it/s]
+case 90 [standard] 'Michael Bakewell is employed by'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13214.62it/s]
+case 90 [ours    ] 'Michael Bakewell is employed by'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11344.04it/s]
+case 91 [standard] 'KiKa, which is located in'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11711.73it/s]
+case 91 [ours    ] 'KiKa, which is located in'                ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13013.50it/s]
+case 92 [standard] 'Castrol is owned by'                      ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12012.71it/s]
+case 92 [ours    ] 'Castrol is owned by'                      ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11732.10it/s]
+case 93 [standard] 'Harry Sacksioni performs on the'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11687.92it/s]
+case 93 [ours    ] 'Harry Sacksioni performs on the'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12179.11it/s]
+case 94 [standard] 'Supermarine is headquartered in'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11770.14it/s]
+case 94 [ours    ] 'Supermarine is headquartered in'          ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12228.77it/s]
+case 95 [standard] 'Michael Kimball works as'                 ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12133.88it/s]
+case 95 [ours    ] 'Michael Kimball works as'                 ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11892.58it/s]
+case 96 [standard] 'The language of The Departure is'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12147.41it/s]
+case 96 [ours    ] 'The language of The Departure is'         ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12627.02it/s]
+case 97 [standard] 'Prafulla Chandra Ghosh holds a citizensh' ES=True  PS=1.00 NS=0.10
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12328.84it/s]
+case 97 [ours    ] 'Prafulla Chandra Ghosh holds a citizensh' ES=True  PS=1.00 NS=0.20
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12190.35it/s]
+case 98 [standard] 'The headquarters of Minnesota Strikers i' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12677.05it/s]
+case 98 [ours    ] 'The headquarters of Minnesota Strikers i' ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12454.25it/s]
+case 99 [standard] 'The occupation of Simon Gosejohann is'    ES=True  PS=1.00 NS=0.00
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11005.74it/s]
+case 99 [ours    ] 'The occupation of Simon Gosejohann is'    ES=True  PS=1.00 NS=0.30
+
+=== FIXED-TRANSFER COUNTERFACT SUMMARY (real, n=100, layer=4, ridge=1.0) ===
+standard  : ES=1.000  PS=0.960  NS=0.056
+ours      : ES=0.990  PS=0.840  NS=0.125
+
+[exited with code 0]

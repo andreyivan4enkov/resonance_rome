@@ -13,9 +13,10 @@ ends; they stay in JOURNEY, not as release tags.
   bug: `cost = -topo` before `relu` made the weak/strong transfer
   IDENTICALLY ZERO for every input ever tested across this whole project —
   `budget_final` was silently always `== ||v||`. Fixed to `cost = +topo`
-- Re-verified the 6-fact joint edit and the N=6..50 scaling curve with the
-  fix active: both unchanged to the 3rd decimal place (results/*_fixed_transfer.txt)
-- COUNTERFACT not yet re-run with this fix (queued, more expensive)
+- Re-verified the 6-fact joint edit, the N=6..50 scaling curve, AND the
+  n=100 real COUNTERFACT benchmark with the fix active: all four checks
+  unchanged to within one flipped case (results/*_fixed_transfer.txt) —
+  fourth consecutive confirmation the headline trade-off is robust
 
 ## 0.7.0 — 2026-08-28
 

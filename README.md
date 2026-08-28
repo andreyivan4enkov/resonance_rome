@@ -369,8 +369,22 @@ still holds exactly.
 **Unchanged, again** — the third real formula bug found in this project
 (after the ROME-formula misread and the peer/fact-budget mix-up), and the
 third time the headline conclusion survived a real correction essentially
-untouched. The COUNTERFACT benchmark has not yet been re-run with this fix
-(more expensive; queued).
+untouched.
+
+**COUNTERFACT re-run at n=100 with the fix** (`results/counterfact_benchmark_n100_fixed_transfer.txt`):
+
+| | ES | PS | NS |
+|---|---|---|---|
+| standard (unaffected by this fix) | 1.000 | 0.960 | 0.056 |
+| resonance, before this fix | 1.000 | 0.855 | 0.124 |
+| resonance, after this fix | 0.990 | 0.840 | 0.125 |
+
+**Fourth consecutive confirmation.** One case flipped on ES (99/100 instead
+of 100/100), PS moved by 0.015, NS by 0.001 — all within what a single
+flipped case explains. The specificity-vs-generalization trade-off (better
+NS, worse PS than the generic baseline) is now confirmed across three real,
+independently-caught bugs and the field's own real benchmark, not just this
+project's own hand-picked facts.
 
 ## What this does NOT show
 
