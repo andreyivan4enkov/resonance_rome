@@ -142,6 +142,27 @@ genuine, reproducible win in MEMIT's actual intended regime, confirming the
 user's correction was right: the earlier "MEMIT doesn't help here" framing
 was really "we hadn't yet tested the right thing."
 
+## A second bug, found by writing tests for a portfolio pass -- not by chasing results
+
+Asked to make the repository "read like an architect's, not a tinkerer's,"
+the obvious no-compute step was distilling the repeated inline math into a
+real package with real unit tests. Writing a test for "total budget is
+conserved" led to checking the transfer formula line by line: `cost = -topo`
+before `relu`. Since `topo` is never negative (it's `relu(cos)`), `cost` was
+never positive, so `relu(cost)` was **identically zero for every real input
+this whole project ever fed it** -- the asymmetric weak-to-strong transfer,
+one of the very first mechanics established in this whole session, had never
+actually fired in a single script. `budget_final` was silently always equal
+to raw `||v||`.
+
+Fixed to `cost = +topo`. A new unit test confirms transfer is now genuinely
+active and conservation still holds. Re-ran the two cheapest real checks
+(6-fact joint edit, N=6..50 scaling curve) with the fix -- **both unchanged
+to the 3rd decimal place**. This is the THIRD real formula bug caught in this
+project (after a ROME-formula misread and a peer/fact-budget mix-up), and
+the third time the headline conclusion survived a real correction
+essentially untouched. COUNTERFACT has not yet been re-run with this fix.
+
 ## Literature check (real search, not from memory)
 
 A live search found real, directly relevant prior work: ROME and MEMIT

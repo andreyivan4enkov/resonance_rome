@@ -1,0 +1,31 @@
+layer=9, FIXED transfer formula, testing N=[6, 15, 30, 50]
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 11022.75it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12762.80it/s]
+N= 6 [standard]: ppl 34.70->39.11 (delta=+4.4011) facts=6/14 new_learned=6/6
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13906.47it/s]
+N= 6 [ours    ]: ppl 34.70->37.23 (delta=+2.5237) facts=7/14 new_learned=6/6
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12881.45it/s]
+N=15 [standard]: ppl 34.70->37.78 (delta=+3.0788) facts=14/14 new_learned=10/15
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12690.78it/s]
+N=15 [ours    ]: ppl 34.70->36.34 (delta=+1.6310) facts=14/14 new_learned=10/15
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13729.92it/s]
+N=30 [standard]: ppl 34.70->37.23 (delta=+2.5265) facts=14/14 new_learned=10/30
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12501.90it/s]
+N=30 [ours    ]: ppl 34.70->35.92 (delta=+1.2103) facts=14/14 new_learned=10/30
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12421.85it/s]
+N=50 [standard]: ppl 34.70->36.70 (delta=+1.9953) facts=14/14 new_learned=9/50
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 14259.79it/s]
+N=50 [ours    ]: ppl 34.70->35.56 (delta=+0.8502) facts=14/14 new_learned=9/50
+
+=== FIXED-TRANSFER SCALING CURVE: standard vs ours ===
+   N |  std_ppl_d std_facts std_learn | ours_ppl_d ours_facts ours_learn
+   6 |     4.4011         6         6 |     2.5237          7          6
+  15 |     3.0788        14        10 |     1.6310         14         10
+  30 |     2.5265        14        10 |     1.2103         14         10
+  50 |     1.9953        14         9 |     0.8502         14          9
+
+[exited with code 0]

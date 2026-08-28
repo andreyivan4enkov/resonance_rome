@@ -5,3 +5,5 @@ hf_cache/
 .hf_cache/
 benchmarks/
 *.pt
+.pytest_cache/
+*.egg-info/

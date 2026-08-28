@@ -339,6 +339,39 @@ paraphrase generalization (0.855 vs 0.960). n=100 is still small relative
 to the field's own papers (hundreds to thousands of cases), but the pattern
 is now confirmed at 5x the original sample, not just a small-n fluke.
 
+## A second, deeper bug — found by writing unit tests, not by chasing more numbers
+
+While packaging the math into a proper library (`resonance_rome/`, below),
+writing a real unit test for "total budget is conserved" led to checking the
+weak/strong transfer formula directly: `cost = -topo` before `relu(cost)`.
+Since `topo = relu(cos)` is never negative, `cost` was never positive, so
+`relu(cost)` was **identically zero for every real input tested** — the
+asymmetric weak-to-strong transfer, one of this whole project's foundational
+mechanics, had **never actually activated in any script, in any result
+above**. `budget_final` was silently always equal to `budget0 = ||v||`; what
+actually ran everywhere was topology weighted by raw peer norm, not by any
+transfer-adjusted budget.
+
+Fixed to `cost = +topo` (higher real resonance → more real transfer, matching
+the literal definition). A new real unit test
+(`tests/test_core.py::test_weak_strong_transfer_actually_activates`) confirms
+transfer is now genuinely nonzero for resonant vectors, and conservation
+still holds exactly.
+
+**Re-verified the two cheapest-to-check results with the fix active**
+(`results/*_fixed_transfer.txt`):
+
+| | 6-fact ppl delta (ours) | scaling curve (ours, N=6/15/30/50) |
+|---|---|---|
+| before this fix | +2.4528 | 2.5172 / 1.6291 / 1.2119 / 0.8504 |
+| after this fix | +2.4515 | 2.5237 / 1.6310 / 1.2103 / 0.8502 |
+
+**Unchanged, again** — the third real formula bug found in this project
+(after the ROME-formula misread and the peer/fact-budget mix-up), and the
+third time the headline conclusion survived a real correction essentially
+untouched. The COUNTERFACT benchmark has not yet been re-run with this fix
+(more expensive; queued).
+
 ## What this does NOT show
 
 - Not tested on models larger than GPT-2-small (124M params).
@@ -357,11 +390,34 @@ is now confirmed at 5x the original sample, not just a small-n fluke.
 ## Repository layout
 
 ```
+resonance_rome/     the reusable LIBRARY -- written AFTER every result below was
+                     verified, as a clean distillation, not a replacement. Import
+                     from here for anything new; see "Verified library" below.
+  core.py             pure-numpy math: topology_and_budget, standard_covariance,
+                       resonance_covariance -- no GPU/model needed
+  gpt2_edit.py        real GPT-2 key extraction + ROME/MEMIT closed-form edit
+tests/
+  test_core.py        real unit tests on the pure math (no GPU, no download) --
+                       includes the regression test for the transfer bug below
 src/
   rome_resonance_edit.py            single-layer ROME, standard vs resonance C, all-layer sweep
   reflection_autopoiesis_hybrid.py  multi-fact K>=S self-calibration of the per-layer hybrid rule
+  counterfact_benchmark.py          real COUNTERFACT (Meng et al.) evaluation, standard vs resonance
+  memit_joint_multi_fact.py         real MEMIT joint multi-fact edit (the actual intended MEMIT regime)
+  memit_scaling_curve.py            N=6..50 simultaneous edits, standard vs resonance
+  memit_style_decomposition.py      multi-LAYER decomposition attempts (v1-v4) -- all failed, kept honest
+  capacity_ceiling_diagnostic.py    diagnoses the ~9-10-fact learning ceiling
   real_sae_features.py              sparse autoencoder used in an earlier, separate (largely
                                      negative-result) line of investigation -- see JOURNEY.md
+
+  NOTE: every script above still carries its own inline copy of the topology/
+  budget math AS ACTUALLY RUN for each documented result (including, for most
+  of them, the two bugs described below) -- they are kept exactly as executed,
+  for reproducibility of the specific numbers in this README, not updated to
+  import the fixed library. `iteration_v`/`iteration_w`-style re-verification
+  scripts (in the full session sandbox, not duplicated here) used the NEW
+  fixed library instead -- see "A second, deeper bug" above for those numbers.
+
 docs/
   METHODS.md      literal mathematical definitions (topology, budget transfer, K>=S check)
   JOURNEY.md       honest chronological account of everything tried, including the failures
@@ -369,8 +425,32 @@ results/
   layer_sweep_1fact_banana.txt      raw output, single-fact all-layer sweep
   reflection_sweep_3facts.txt       raw output, 3-fact self-calibration sweep
   reflection_sweep_6facts.txt       raw output, 6-fact self-calibration sweep (clean, no tokenization confound)
-  memit_decomposition.txt           raw output, multi-layer decomposition test
+  memit_decomposition*.txt          raw output, multi-layer decomposition attempts (v1-v4)
+  memit_joint_6facts*.txt           raw output, real MEMIT joint 6-fact edit (before/after the transfer fix)
+  memit_scaling_curve*.txt          raw output, N=6..50 scaling curve (before/after the transfer fix)
+  counterfact_benchmark_*.txt       raw output, real COUNTERFACT evaluation (n=20 and n=100)
+  capacity_ceiling_diagnostic.txt   raw output, learning-ceiling diagnosis
 ```
+
+## Verified library (`resonance_rome/`)
+
+```python
+from resonance_rome import topology_and_budget, resonance_covariance, standard_covariance
+from resonance_rome import extract_peer_keys, rome_edit, joint_memit_edit
+
+# single-fact ROME edit
+peer_K = extract_peer_keys(model, tok, device, real_sentences, layer=9)
+rome_edit(model, tok, device, layer=9, prompt="The secret code word is",
+          target_word=" banana", peer_keys=peer_K, mode="ours")
+
+# real MEMIT joint edit, N facts at once
+joint_memit_edit(model, tok, device, layer=9,
+                  facts=[("The secret code word is", " banana"), ...],
+                  peer_keys=peer_K, mode="ours")
+```
+
+Install locally with `pip install -e .`; run the pure-math tests with
+`pytest tests/` (no GPU or model download required).
 
 ## Reproducing
 

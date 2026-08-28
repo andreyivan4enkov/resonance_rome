@@ -1,0 +1,9 @@
+layer=9, 6 facts, FIXED transfer formula (cost=+topo)
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 2877.78it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 12862.76it/s]
+[standard] BEFORE ppl=34.7049 facts=14/14 new=0/6  -> AFTER ppl=38.8856 (delta=+4.1808) facts=11/14 new=6/6
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 13971.89it/s]
+[ours    ] BEFORE ppl=34.7049 facts=14/14 new=0/6  -> AFTER ppl=37.1564 (delta=+2.4515) facts=12/14 new=6/6
+
+[exited with code 0]

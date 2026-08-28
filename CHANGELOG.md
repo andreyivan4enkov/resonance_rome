@@ -1,8 +1,40 @@
 # Changelog
 
-Mapped to the 2026-08-27 research session (§§8bb–8jj). Full narrative:
+Mapped to the 2026-08-27/28 research session (§§8bb–8oo+). Full narrative:
 `docs/JOURNEY.md`. Iteration letters H–N were activation-steering / SAE dead
 ends; they stay in JOURNEY, not as release tags.
+
+## 0.8.0 — 2026-08-28
+
+- Packaged the verified math into a real library (`resonance_rome/core.py`,
+  `resonance_rome/gpt2_edit.py`) with real pytest unit tests (`tests/`), no
+  GPU/model needed to run them
+- Writing a real test for "total budget is conserved" caught a THIRD real
+  bug: `cost = -topo` before `relu` made the weak/strong transfer
+  IDENTICALLY ZERO for every input ever tested across this whole project —
+  `budget_final` was silently always `== ||v||`. Fixed to `cost = +topo`
+- Re-verified the 6-fact joint edit and the N=6..50 scaling curve with the
+  fix active: both unchanged to the 3rd decimal place (results/*_fixed_transfer.txt)
+- COUNTERFACT not yet re-run with this fix (queued, more expensive)
+
+## 0.7.0 — 2026-08-28
+
+- Real COUNTERFACT benchmark (Meng et al. 2022's own 21,919-case dataset,
+  downloaded live) — `src/counterfact_benchmark.py`
+- First pass (untuned layer=9): catastrophic NS for both C choices
+  (0.005 / 0.065) — layer never tuned for real, diverse facts
+- After a real 9-config layer/ridge sweep (layer=4, ridge=1.0): honest
+  specificity/generalization trade-off emerges — resonance wins NS (~1.5–2.2x)
+  at a real cost on PS, confirmed at n=20 and scaled to n=100
+
+## 0.6.0 — 2026-08-28
+
+- Caught (by direct challenge: "не забыл ли ты опять часть моей логики?")
+  a real bug in the multi-fact resonance weighting: it used the EDITED
+  FACT's own budget as the multiplier for every peer, instead of each
+  PEER's own budget (the single-fact version always had this right)
+- Fixed; re-verified the 6-fact joint edit and the N=6..50 scaling curve —
+  both unchanged to the 4th decimal place
 
 ## 0.5.1 — 2026-08-28
 
