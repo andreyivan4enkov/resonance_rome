@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.1 — 2026-08-28
+
+- Caught a real methodological substitution in the cluster-mechanism test:
+  used standard symmetric spectral clustering instead of this project's own
+  asymmetric attractor logic. Redesigned using the already-established
+  gravitational-center mechanic (each neuron follows its own real attractor
+  to a fixed point). Real result: 48 self-organized clusters, but the
+  ridge-vs-null-space energy difference remained small — the fix didn't
+  change the conclusion, reinforcing rather than undermining it
+
+
 ## 1.0.0 — 2026-08-28 (finalized for this research phase)
 
 - Final pass: all 9 unit tests green, all file references in README/docs

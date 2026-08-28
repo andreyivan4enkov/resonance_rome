@@ -627,6 +627,32 @@ two mechanisms (differences of 0.004-0.040), with the largest difference on
 one of two very small (8-neuron) clusters — weak, inconclusive. Both nulls
 kept honestly rather than reframed as support.
 
+**A real methodological substitution caught in the cluster test, fixed, still
+a null.** The cluster test above used `sklearn.SpectralClustering`: a
+symmetric affinity matrix, one externally-imposed global cut — exactly the
+kind of standard method this project exists to avoid defaulting to, and
+inconsistent with this project's own asymmetric logic (topology+budget
+transfer is not symmetric; a Markov-Interface-style boundary should emerge
+from each node's own declared perspective, not one global partition).
+Redesigned using an already-established mechanic instead
+(`src/asymmetric_perspective_clusters.py`): each real neuron follows its own
+real attractor (`argmax_j topo_ij * budget_final_j`, its own row — the same
+"gravitational center" logic used elsewhere in this project) to a real fixed
+point; clusters are the real, self-organized attractor basins that emerge,
+not a k-way partition chosen in advance.
+
+Real result: 400 neurons self-organized into 48 real clusters (sizes 1-54,
+`results/asymmetric_perspective_clusters.txt`) — a much more natural
+structure than the imposed k=6. But the ridge-vs-null-space cluster-energy
+difference remained small even among non-trivial (≥5-neuron) clusters
+(0.0002-0.0125, if anything smaller than the earlier symmetric-clustering
+run). The real methodological fix did not surface a stronger signal —
+consistent with, not contradicting, this project's closing diagnosis
+(`docs/JOURNEY.md`): even an asymmetric, self-organized analysis doesn't
+cleanly separate these two mechanisms into distinct real clusters in a
+classic architecture built on superposition, not designed to keep them
+distinct.
+
 ## Attribution
 
 Built on real, published prior work: ROME (Meng, Bau, Andonian, Belinkov,
